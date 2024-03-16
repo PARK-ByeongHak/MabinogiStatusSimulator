@@ -235,12 +235,12 @@ void MainWindow::InitializeStats() {
         STAT_DEX_Talent_TreasureHunter = 0.0f,
         STAT_WILL_Talent_TreasureHunter = 0.25f,
         STAT_LUCK_Talent_TreasureHunter = 0.25f;
-    const float STAT_STR_Talent_PetHandler = 0.5f,
+    const float STAT_STR_Talent_PetHandler = 0.0f,
         STAT_INT_Talent_PetHandler = 0.0f,
         STAT_DEX_Talent_PetHandler = 0.0f,
         STAT_WILL_Talent_PetHandler = 0.25f,
         STAT_LUCK_Talent_PetHandler = 0.25f;
-    const float STAT_STR_Talent_MagiGraphy = 0.5f,
+    const float STAT_STR_Talent_MagiGraphy = 0.0f,
         STAT_INT_Talent_MagiGraphy = 0.25f,
         STAT_DEX_Talent_MagiGraphy = 0.25f,
         STAT_WILL_Talent_MagiGraphy = 0.0f,
