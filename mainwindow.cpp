@@ -206,8 +206,8 @@ void MainWindow::InitializeStats() {
         STAT_WILL_Talent_Ninja = 0.25f,
         STAT_LUCK_Talent_Ninja = 0.0f;
     const float STAT_STR_Talent_ChainBlade = 0.0f,
-        STAT_INT_Talent_ChainBlade = 0.25f,
-        STAT_DEX_Talent_ChainBlade = 0.0f,
+        STAT_INT_Talent_ChainBlade = 0.0f,
+        STAT_DEX_Talent_ChainBlade = 0.25f,
         STAT_WILL_Talent_ChainBlade = 0.0f,
         STAT_LUCK_Talent_ChainBlade = 0.25f;
     const float STAT_STR_Talent_Merlin = 0.0f,
@@ -345,8 +345,8 @@ void MainWindow::InitializeStats() {
         STAT_WILL_Talent_Bonus_Ninja = 10.0f,
         STAT_LUCK_Talent_Bonus_Ninja = 0.0f;
     const float STAT_STR_Talent_Bonus_ChainBlade = 0.0f,
-        STAT_INT_Talent_Bonus_ChainBlade = 10.0f,
-        STAT_DEX_Talent_Bonus_ChainBlade = 0.0f,
+        STAT_INT_Talent_Bonus_ChainBlade = 0.0f,
+        STAT_DEX_Talent_Bonus_ChainBlade = 10.0f,
         STAT_WILL_Talent_Bonus_ChainBlade = 0.0f,
         STAT_LUCK_Talent_Bonus_ChainBlade = 10.0f;
     const float STAT_STR_Talent_Bonus_Merlin = 0.0f,
