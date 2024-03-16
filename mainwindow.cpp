@@ -52,7 +52,7 @@ void MainWindow::Initialize()
     ui->comboTalent->addItem("마기그래피");
     ui->comboTalent->addItem("멀린");
     ui->comboTalent->addItem("디바");
-    ui->comboTalent->addItem("프로페서J");
+    ui->comboTalent->addItem("프로페서 J");
     ui->comboTalent->addItem("마스터셰프");
     ui->comboTalent->addItem("트래저 헌터");
 
