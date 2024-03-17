@@ -66,7 +66,7 @@ void MainWindow::Initialize()
 
     InitializeStats();
 
-connect(ui->btnCalculate,SIGNAL(clicked()),this,SLOT(CalculateStats()));
+    connect(ui->btnCalculate,SIGNAL(clicked()),this,SLOT(CalculateStats()));
 
 }
 void MainWindow::CalculateStats()
@@ -87,11 +87,11 @@ void MainWindow::CalculateStats()
 
     Stats currentStats;
     currentStats.statLife = currentLife + (vecStatAge.at(currentAge).statLife * currentCombatLevel) + (vecStatAge.at(currentAge).statLife * currentExplorerLevel) +
-                           (vecStatTalent.at(currentTalent).statLife * currentCombatLevel) + (vecStatTalent.at(currentTalent).statLife * currentExplorerLevel) + vecStatTalentBonus.at(currentTalentBonus).statLife;
+                            (vecStatTalent.at(currentTalent).statLife * currentCombatLevel) + (vecStatTalent.at(currentTalent).statLife * currentExplorerLevel) + vecStatTalentBonus.at(currentTalentBonus).statLife;
     currentStats.statMana = currentMana + (vecStatAge.at(currentAge).statMana * currentCombatLevel) + (vecStatAge.at(currentAge).statMana * currentExplorerLevel) +
-                           (vecStatTalent.at(currentTalent).statMana * currentCombatLevel) + (vecStatTalent.at(currentTalent).statMana * currentExplorerLevel) + vecStatTalentBonus.at(currentTalentBonus).statMana;
+                            (vecStatTalent.at(currentTalent).statMana * currentCombatLevel) + (vecStatTalent.at(currentTalent).statMana * currentExplorerLevel) + vecStatTalentBonus.at(currentTalentBonus).statMana;
     currentStats.statStam = currentStam + (vecStatAge.at(currentAge).statStam * currentCombatLevel) + (vecStatAge.at(currentAge).statStam * currentExplorerLevel) +
-                           (vecStatTalent.at(currentTalent).statStam * currentCombatLevel) + (vecStatTalent.at(currentTalent).statStam * currentExplorerLevel) + vecStatTalentBonus.at(currentTalentBonus).statStam;
+                            (vecStatTalent.at(currentTalent).statStam * currentCombatLevel) + (vecStatTalent.at(currentTalent).statStam * currentExplorerLevel) + vecStatTalentBonus.at(currentTalentBonus).statStam;
     currentStats.statStr = currentStr + (vecStatAge.at(currentAge).statStr * currentCombatLevel) + (vecStatAge.at(currentAge).statStr * currentExplorerLevel) +
                            (vecStatTalent.at(currentTalent).statStr * currentCombatLevel) + (vecStatTalent.at(currentTalent).statStr * currentExplorerLevel) + vecStatTalentBonus.at(currentTalentBonus).statStr;
     currentStats.statInt = currentInt + (vecStatAge.at(currentAge).statInt * currentCombatLevel) + (vecStatAge.at(currentAge).statInt * currentExplorerLevel) +
@@ -579,56 +579,56 @@ void MainWindow::InitializeStats() {
     for(int i = AGE::AGE_10; i < AGE::AGE_25이상 + 1 ; i++) {
         Stats initStats;
         switch(i) {
-            case AGE::AGE_10:
-                initStats = {STAT_LIFE_10, STAT_MANA_10, STAT_STAM_10, STAT_STR_10, STAT_DEX_10, STAT_INT_10, STAT_WILL_10, STAT_LUCK_10};
-                break;
-            case AGE::AGE_11:
-                initStats = {STAT_LIFE_11, STAT_MANA_11, STAT_STAM_11, STAT_STR_11, STAT_DEX_11, STAT_INT_11, STAT_WILL_11, STAT_LUCK_11};
-                break;
-            case AGE::AGE_12:
-                initStats = {STAT_LIFE_12, STAT_MANA_12, STAT_STAM_12, STAT_STR_12, STAT_DEX_12, STAT_INT_12, STAT_WILL_12, STAT_LUCK_12};
-                break;
-            case AGE::AGE_13:
-                initStats = {STAT_LIFE_13, STAT_MANA_13, STAT_STAM_13, STAT_STR_13, STAT_DEX_13, STAT_INT_13, STAT_WILL_13, STAT_LUCK_13};
-                break;
-            case AGE::AGE_14:
-                initStats = {STAT_LIFE_14, STAT_MANA_14, STAT_STAM_14, STAT_STR_14, STAT_DEX_14, STAT_INT_14, STAT_WILL_14, STAT_LUCK_14};
-                break;
-            case AGE::AGE_15:
-                initStats = {STAT_LIFE_15, STAT_MANA_15, STAT_STAM_15, STAT_STR_15, STAT_DEX_15, STAT_INT_15, STAT_WILL_15, STAT_LUCK_15};
-                break;
-            case AGE::AGE_16:
-                initStats = {STAT_LIFE_16, STAT_MANA_16, STAT_STAM_16, STAT_STR_16, STAT_DEX_16, STAT_INT_16, STAT_WILL_16, STAT_LUCK_16};
-                break;
-            case AGE::AGE_17:
-                initStats = {STAT_LIFE_17, STAT_MANA_17, STAT_STAM_17, STAT_STR_17, STAT_DEX_17, STAT_INT_17, STAT_WILL_17, STAT_LUCK_17};
-                break;
-            case AGE::AGE_18:
-                initStats = {STAT_LIFE_18, STAT_MANA_18, STAT_STAM_18, STAT_STR_18, STAT_DEX_18, STAT_INT_18, STAT_WILL_18, STAT_LUCK_18};
-                break;
-            case AGE::AGE_19:
-                initStats = {STAT_LIFE_19, STAT_MANA_19, STAT_STAM_19, STAT_STR_19, STAT_DEX_19, STAT_INT_19, STAT_WILL_19, STAT_LUCK_19};
-                break;
-            case AGE::AGE_20:
-                initStats = {STAT_LIFE_20, STAT_MANA_20, STAT_STAM_20, STAT_STR_20, STAT_DEX_20, STAT_INT_20, STAT_WILL_20, STAT_LUCK_20};
-                break;
-            case AGE::AGE_21:
-                initStats = {STAT_LIFE_21, STAT_MANA_21, STAT_STAM_21, STAT_STR_21, STAT_DEX_21, STAT_INT_21, STAT_WILL_21, STAT_LUCK_21};
-                break;
-            case AGE::AGE_22:
-                initStats = {STAT_LIFE_22, STAT_MANA_22, STAT_STAM_22, STAT_STR_22, STAT_DEX_22, STAT_INT_22, STAT_WILL_22, STAT_LUCK_22};
-                break;
-            case AGE::AGE_23:
-                initStats = {STAT_LIFE_23, STAT_MANA_23, STAT_STAM_23, STAT_STR_23, STAT_DEX_23, STAT_INT_23, STAT_WILL_23, STAT_LUCK_23};
-                break;
-            case AGE::AGE_24:
-                initStats = {STAT_LIFE_24, STAT_MANA_24, STAT_STAM_24, STAT_STR_24, STAT_DEX_24, STAT_INT_24, STAT_WILL_24, STAT_LUCK_24};
-                break;
-            case AGE::AGE_25이상:
-                initStats = {STAT_LIFE_25_OVER, STAT_MANA_25_OVER, STAT_STAM_25_OVER, STAT_STR_25_OVER, STAT_DEX_25_OVER, STAT_INT_25_OVER, STAT_WILL_25_OVER, STAT_LUCK_25_OVER};
-                break;
-            default:
-                break;
+        case AGE::AGE_10:
+            initStats = {STAT_LIFE_10, STAT_MANA_10, STAT_STAM_10, STAT_STR_10, STAT_INT_10, STAT_DEX_10, STAT_WILL_10, STAT_LUCK_10};
+            break;
+        case AGE::AGE_11:
+            initStats = {STAT_LIFE_11, STAT_MANA_11, STAT_STAM_11, STAT_STR_11, STAT_INT_11, STAT_DEX_11, STAT_WILL_11, STAT_LUCK_11};
+            break;
+        case AGE::AGE_12:
+            initStats = {STAT_LIFE_12, STAT_MANA_12, STAT_STAM_12, STAT_STR_12, STAT_INT_12, STAT_DEX_12, STAT_WILL_12, STAT_LUCK_12};
+            break;
+        case AGE::AGE_13:
+            initStats = {STAT_LIFE_13, STAT_MANA_13, STAT_STAM_13, STAT_STR_13, STAT_INT_13, STAT_DEX_13, STAT_WILL_13, STAT_LUCK_13};
+            break;
+        case AGE::AGE_14:
+            initStats = {STAT_LIFE_14, STAT_MANA_14, STAT_STAM_14, STAT_STR_14, STAT_INT_14, STAT_DEX_14, STAT_WILL_14, STAT_LUCK_14};
+            break;
+        case AGE::AGE_15:
+            initStats = {STAT_LIFE_15, STAT_MANA_15, STAT_STAM_15, STAT_STR_15, STAT_INT_15, STAT_DEX_15, STAT_WILL_15, STAT_LUCK_15};
+            break;
+        case AGE::AGE_16:
+            initStats = {STAT_LIFE_16, STAT_MANA_16, STAT_STAM_16, STAT_STR_16, STAT_INT_16, STAT_DEX_16, STAT_WILL_16, STAT_LUCK_16};
+            break;
+        case AGE::AGE_17:
+            initStats = {STAT_LIFE_17, STAT_MANA_17, STAT_STAM_17, STAT_STR_17, STAT_INT_17, STAT_DEX_17, STAT_WILL_17, STAT_LUCK_17};
+            break;
+        case AGE::AGE_18:
+            initStats = {STAT_LIFE_18, STAT_MANA_18, STAT_STAM_18, STAT_STR_18, STAT_INT_18, STAT_DEX_18, STAT_WILL_18, STAT_LUCK_18};
+            break;
+        case AGE::AGE_19:
+            initStats = {STAT_LIFE_19, STAT_MANA_19, STAT_STAM_19, STAT_STR_19, STAT_INT_19, STAT_DEX_19, STAT_WILL_19, STAT_LUCK_19};
+            break;
+        case AGE::AGE_20:
+            initStats = {STAT_LIFE_20, STAT_MANA_20, STAT_STAM_20, STAT_STR_20, STAT_INT_20, STAT_DEX_20, STAT_WILL_20, STAT_LUCK_20};
+            break;
+        case AGE::AGE_21:
+            initStats = {STAT_LIFE_21, STAT_MANA_21, STAT_STAM_21, STAT_STR_21, STAT_INT_21, STAT_DEX_21, STAT_WILL_21, STAT_LUCK_21};
+            break;
+        case AGE::AGE_22:
+            initStats = {STAT_LIFE_22, STAT_MANA_22, STAT_STAM_22, STAT_STR_22, STAT_INT_22, STAT_DEX_22, STAT_WILL_22, STAT_LUCK_22};
+            break;
+        case AGE::AGE_23:
+            initStats = {STAT_LIFE_23, STAT_MANA_23, STAT_STAM_23, STAT_STR_23, STAT_INT_23, STAT_DEX_23, STAT_WILL_23, STAT_LUCK_23};
+            break;
+        case AGE::AGE_24:
+            initStats = {STAT_LIFE_24, STAT_MANA_24, STAT_STAM_24, STAT_STR_24, STAT_INT_24, STAT_DEX_24, STAT_WILL_24, STAT_LUCK_24};
+            break;
+        case AGE::AGE_25이상:
+            initStats = {STAT_LIFE_25_OVER, STAT_MANA_25_OVER, STAT_STAM_25_OVER, STAT_STR_25_OVER, STAT_INT_25_OVER, STAT_DEX_25_OVER, STAT_WILL_25_OVER, STAT_LUCK_25_OVER};
+            break;
+        default:
+            break;
         }
         vecStatAge.push_back(initStats);
     }
@@ -636,89 +636,170 @@ void MainWindow::InitializeStats() {
     for(int i = TALENT::Talent_Combat; i < TALENT::Talent_TreasureHunter + 1 ; i++) {
         Stats initStats;
         switch(i) {
-            case Talent_Combat:
-                initStats = {STAT_LIFE_Talent_Combat, STAT_MANA_Talent_Combat, STAT_STAM_Talent_Combat, STAT_STR_Talent_Combat, STAT_INT_Talent_Combat, STAT_DEX_Talent_Combat, STAT_WILL_Talent_Combat, STAT_LUCK_Talent_Combat};
-                break;
-            case Talent_Lance:
-                initStats = {STAT_LIFE_Talent_Lance, STAT_MANA_Talent_Lance, STAT_STAM_Talent_Lance, STAT_STR_Talent_Lance, STAT_INT_Talent_Lance, STAT_DEX_Talent_Lance, STAT_WILL_Talent_Lance, STAT_LUCK_Talent_Lance};
-                break;
-            case Talent_RangeCombat:
-                initStats = {STAT_LIFE_Talent_RangeCombat, STAT_MANA_Talent_RangeCombat, STAT_STAM_Talent_RangeCombat, STAT_STR_Talent_RangeCombat, STAT_INT_Talent_RangeCombat, STAT_DEX_Talent_RangeCombat, STAT_WILL_Talent_RangeCombat, STAT_LUCK_Talent_RangeCombat};
-                break;
-            case Talent_Mage:
-                initStats = {STAT_LIFE_Talent_Mage, STAT_MANA_Talent_Mage, STAT_STAM_Talent_Mage, STAT_STR_Talent_Mage, STAT_INT_Talent_Mage, STAT_DEX_Talent_Mage, STAT_WILL_Talent_Mage, STAT_LUCK_Talent_Mage};
-                break;
-            case Talent_Priest:
-                initStats = {STAT_LIFE_Talent_Priest, STAT_MANA_Talent_Priest, STAT_STAM_Talent_Priest, STAT_STR_Talent_Priest, STAT_INT_Talent_Priest, STAT_DEX_Talent_Priest, STAT_WILL_Talent_Priest, STAT_LUCK_Talent_Priest};
-                break;
-            case Talent_Monk :
-                initStats = {STAT_LIFE_Talent_Monk, STAT_MANA_Talent_Monk, STAT_STAM_Talent_Monk, STAT_STR_Talent_Monk, STAT_INT_Talent_Monk, STAT_DEX_Talent_Monk, STAT_WILL_Talent_Monk, STAT_LUCK_Talent_Monk};
-                break;
-            case Talent_Bard :
-                initStats = {STAT_LIFE_Talent_Bard, STAT_MANA_Talent_Bard, STAT_STAM_Talent_Bard, STAT_STR_Talent_Bard, STAT_INT_Talent_Bard, STAT_DEX_Talent_Bard, STAT_WILL_Talent_Bard, STAT_LUCK_Talent_Bard};
-                break;
-            case Talent_CombatAlchemist :
-                initStats = {STAT_LIFE_Talent_CombatAlchemist, STAT_MANA_Talent_CombatAlchemist, STAT_STAM_Talent_CombatAlchemist, STAT_STR_Talent_CombatAlchemist, STAT_INT_Talent_CombatAlchemist, STAT_DEX_Talent_CombatAlchemist, STAT_WILL_Talent_CombatAlchemist, STAT_LUCK_Talent_CombatAlchemist};
-                break;
-            case Talent_TransemuteAlchemist :
-                initStats = {STAT_LIFE_Talent_TransemuteAlchemist, STAT_MANA_Talent_TransemuteAlchemist, STAT_STAM_Talent_TransemuteAlchemist, STAT_STR_Talent_TransemuteAlchemist, STAT_INT_Talent_TransemuteAlchemist, STAT_DEX_Talent_TransemuteAlchemist, STAT_WILL_Talent_TransemuteAlchemist, STAT_LUCK_Talent_TransemuteAlchemist};
-                break;
-            case Talent_Trader :
-                initStats = {STAT_LIFE_Talent_Trader, STAT_MANA_Talent_Trader, STAT_STAM_Talent_Trader, STAT_STR_Talent_Trader, STAT_INT_Talent_Trader, STAT_DEX_Talent_Trader, STAT_WILL_Talent_Trader, STAT_LUCK_Talent_Trader};
-                break;
-            case Talent_Blacksmith :
-                initStats = {STAT_LIFE_Talent_Blacksmith, STAT_MANA_Talent_Blacksmith, STAT_STAM_Talent_Blacksmith, STAT_STR_Talent_Blacksmith, STAT_INT_Talent_Blacksmith, STAT_DEX_Talent_Blacksmith, STAT_WILL_Talent_Blacksmith, STAT_LUCK_Talent_Blacksmith};
-                break;
-            case Talent_Cook :
-                initStats = {STAT_LIFE_Talent_Cook, STAT_MANA_Talent_Cook, STAT_STAM_Talent_Cook, STAT_STR_Talent_Cook, STAT_INT_Talent_Cook, STAT_DEX_Talent_Cook, STAT_WILL_Talent_Cook, STAT_LUCK_Talent_Cook};
-                break;
-            case Talent_Tailor :
-                initStats = {STAT_LIFE_Talent_Tailor, STAT_MANA_Talent_Tailor, STAT_STAM_Talent_Tailor, STAT_STR_Talent_Tailor, STAT_INT_Talent_Tailor, STAT_DEX_Talent_Tailor, STAT_WILL_Talent_Tailor, STAT_LUCK_Talent_Tailor};
-                break;
-            case Talent_PotionMaker :
-                initStats = {STAT_LIFE_Talent_PotionMaker, STAT_MANA_Talent_PotionMaker, STAT_STAM_Talent_PotionMaker, STAT_STR_Talent_PotionMaker, STAT_INT_Talent_PotionMaker, STAT_DEX_Talent_PotionMaker, STAT_WILL_Talent_PotionMaker, STAT_LUCK_Talent_PotionMaker};
-                break;
-            case Talent_Carpentry :
-                initStats = {STAT_LIFE_Talent_Carpentry, STAT_MANA_Talent_Carpentry, STAT_STAM_Talent_Carpentry, STAT_STR_Talent_Carpentry, STAT_INT_Talent_Carpentry, STAT_DEX_Talent_Carpentry, STAT_WILL_Talent_Carpentry, STAT_LUCK_Talent_Carpentry};
-                break;
-            case Talent_Traveler :
-                initStats = {STAT_LIFE_Talent_Traveler, STAT_MANA_Talent_Traveler, STAT_STAM_Talent_Traveler, STAT_STR_Talent_Traveler, STAT_INT_Talent_Traveler, STAT_DEX_Talent_Traveler, STAT_WILL_Talent_Traveler, STAT_LUCK_Talent_Traveler};
-                break;
-            case Talent_Marionette :
-                initStats = {STAT_LIFE_Talent_Marionette, STAT_MANA_Talent_Marionette, STAT_STAM_Talent_Marionette, STAT_STR_Talent_Marionette, STAT_INT_Talent_Marionette, STAT_DEX_Talent_Marionette, STAT_WILL_Talent_Marionette, STAT_LUCK_Talent_Marionette};
-                break;
-            case Talent_Shooter :
-                initStats = {STAT_LIFE_Talent_Shooter, STAT_MANA_Talent_Shooter, STAT_STAM_Talent_Shooter, STAT_STR_Talent_Shooter, STAT_INT_Talent_Shooter, STAT_DEX_Talent_Shooter, STAT_WILL_Talent_Shooter, STAT_LUCK_Talent_Shooter};
-                break;
-            case Talent_Ninja :
-                initStats = {STAT_LIFE_Talent_Ninja, STAT_MANA_Talent_Ninja, STAT_STAM_Talent_Ninja, STAT_STR_Talent_Ninja, STAT_INT_Talent_Ninja, STAT_DEX_Talent_Ninja, STAT_WILL_Talent_Ninja, STAT_LUCK_Talent_Ninja};
-                break;
-            case Talent_ChainBlade :
-                initStats = {STAT_LIFE_Talent_ChainBlade, STAT_MANA_Talent_ChainBlade, STAT_STAM_Talent_ChainBlade, STAT_STR_Talent_ChainBlade, STAT_INT_Talent_ChainBlade, STAT_DEX_Talent_ChainBlade, STAT_WILL_Talent_ChainBlade, STAT_LUCK_Talent_ChainBlade};
-                break;
-            case Talent_Merlin :
-                initStats = {STAT_LIFE_Talent_Merlin, STAT_MANA_Talent_Merlin, STAT_STAM_Talent_Merlin, STAT_STR_Talent_Merlin, STAT_INT_Talent_Merlin, STAT_DEX_Talent_Merlin, STAT_WILL_Talent_Merlin, STAT_LUCK_Talent_Merlin};
-                break;
-            case Talent_Diva :
-                initStats = {STAT_LIFE_Talent_Diva, STAT_MANA_Talent_Diva, STAT_STAM_Talent_Diva, STAT_STR_Talent_Diva, STAT_INT_Talent_Diva, STAT_DEX_Talent_Diva, STAT_WILL_Talent_Diva, STAT_LUCK_Talent_Diva};
-                break;
-            case Talent_ProfessorJ :
-                initStats = {STAT_LIFE_Talent_ProfessorJ, STAT_MANA_Talent_ProfessorJ, STAT_STAM_Talent_ProfessorJ, STAT_STR_Talent_ProfessorJ, STAT_INT_Talent_ProfessorJ, STAT_DEX_Talent_ProfessorJ, STAT_WILL_Talent_ProfessorJ, STAT_LUCK_Talent_ProfessorJ};
-                break;
-            case Talent_MasterChef :
-                initStats = {STAT_LIFE_Talent_MasterChef, STAT_MANA_Talent_MasterChef, STAT_STAM_Talent_MasterChef, STAT_STR_Talent_MasterChef, STAT_INT_Talent_MasterChef, STAT_DEX_Talent_MasterChef, STAT_WILL_Talent_MasterChef, STAT_LUCK_Talent_MasterChef};
-                break;
-            case Talent_TreasureHunter:
-                initStats = {STAT_LIFE_Talent_TreasureHunter, STAT_MANA_Talent_TreasureHunter, STAT_STAM_Talent_TreasureHunter, STAT_STR_Talent_TreasureHunter, STAT_INT_Talent_TreasureHunter, STAT_DEX_Talent_TreasureHunter, STAT_WILL_Talent_TreasureHunter, STAT_LUCK_Talent_TreasureHunter};
-                break;
-            case Talent_PetHandler:
-                initStats = {STAT_LIFE_Talent_PetHandler, STAT_MANA_Talent_PetHandler, STAT_STAM_Talent_PetHandler, STAT_STR_Talent_PetHandler, STAT_INT_Talent_PetHandler, STAT_DEX_Talent_PetHandler, STAT_WILL_Talent_PetHandler, STAT_LUCK_Talent_PetHandler};
-                break;
-            case Talent_MagiGraphy:
-                initStats = {STAT_LIFE_Talent_MagiGraphy, STAT_MANA_Talent_MagiGraphy, STAT_STAM_Talent_MagiGraphy, STAT_STR_Talent_MagiGraphy, STAT_INT_Talent_MagiGraphy, STAT_DEX_Talent_MagiGraphy, STAT_WILL_Talent_MagiGraphy, STAT_LUCK_Talent_MagiGraphy};
-                break;
-            default:
-                break;
+        case Talent_Combat:
+            initStats = {STAT_LIFE_Talent_Combat, STAT_MANA_Talent_Combat,
+                         STAT_STAM_Talent_Combat, STAT_STR_Talent_Combat,
+                         STAT_INT_Talent_Combat, STAT_DEX_Talent_Combat,
+                         STAT_WILL_Talent_Combat, STAT_LUCK_Talent_Combat};
+            break;
+        case Talent_Lance:
+            initStats = {STAT_LIFE_Talent_Lance, STAT_MANA_Talent_Lance,
+                         STAT_STAM_Talent_Lance, STAT_STR_Talent_Lance,
+                         STAT_INT_Talent_Lance, STAT_DEX_Talent_Lance,
+                         STAT_WILL_Talent_Lance, STAT_LUCK_Talent_Lance};
+            break;
+        case Talent_RangeCombat:
+            initStats = {STAT_LIFE_Talent_RangeCombat, STAT_MANA_Talent_RangeCombat,
+                         STAT_STAM_Talent_RangeCombat, STAT_STR_Talent_RangeCombat,
+                         STAT_INT_Talent_RangeCombat, STAT_DEX_Talent_RangeCombat,
+                         STAT_WILL_Talent_RangeCombat, STAT_LUCK_Talent_RangeCombat};
+            break;
+        case Talent_Mage:
+            initStats = {STAT_LIFE_Talent_Mage, STAT_MANA_Talent_Mage,
+                         STAT_STAM_Talent_Mage, STAT_STR_Talent_Mage,
+                         STAT_INT_Talent_Mage, STAT_DEX_Talent_Mage,
+                         STAT_WILL_Talent_Mage, STAT_LUCK_Talent_Mage};
+            break;
+        case Talent_Priest:
+            initStats = {STAT_LIFE_Talent_Priest, STAT_MANA_Talent_Priest,
+                         STAT_STAM_Talent_Priest, STAT_STR_Talent_Priest,
+                         STAT_INT_Talent_Priest, STAT_DEX_Talent_Priest,
+                         STAT_WILL_Talent_Priest, STAT_LUCK_Talent_Priest};
+            break;
+        case Talent_Monk :
+            initStats = {STAT_LIFE_Talent_Monk, STAT_MANA_Talent_Monk,
+                         STAT_STAM_Talent_Monk, STAT_STR_Talent_Monk,
+                         STAT_INT_Talent_Monk, STAT_DEX_Talent_Monk,
+                         STAT_WILL_Talent_Monk, STAT_LUCK_Talent_Monk};
+            break;
+        case Talent_Bard :
+            initStats = {STAT_LIFE_Talent_Bard, STAT_MANA_Talent_Bard,
+                         STAT_STAM_Talent_Bard, STAT_STR_Talent_Bard,
+                         STAT_INT_Talent_Bard, STAT_DEX_Talent_Bard,
+                         STAT_WILL_Talent_Bard, STAT_LUCK_Talent_Bard};
+            break;
+        case Talent_CombatAlchemist :
+            initStats = {STAT_LIFE_Talent_CombatAlchemist, STAT_MANA_Talent_CombatAlchemist,
+                         STAT_STAM_Talent_CombatAlchemist, STAT_STR_Talent_CombatAlchemist,
+                         STAT_INT_Talent_CombatAlchemist, STAT_DEX_Talent_CombatAlchemist,
+                         STAT_WILL_Talent_CombatAlchemist, STAT_LUCK_Talent_CombatAlchemist};
+            break;
+        case Talent_TransemuteAlchemist :
+            initStats = {STAT_LIFE_Talent_TransemuteAlchemist, STAT_MANA_Talent_TransemuteAlchemist,
+                         STAT_STAM_Talent_TransemuteAlchemist, STAT_STR_Talent_TransemuteAlchemist,
+                         STAT_INT_Talent_TransemuteAlchemist, STAT_DEX_Talent_TransemuteAlchemist,
+                         STAT_WILL_Talent_TransemuteAlchemist, STAT_LUCK_Talent_TransemuteAlchemist};
+            break;
+        case Talent_Trader :
+            initStats = {STAT_LIFE_Talent_Trader, STAT_MANA_Talent_Trader,
+                         STAT_STAM_Talent_Trader, STAT_STR_Talent_Trader,
+                         STAT_INT_Talent_Trader, STAT_DEX_Talent_Trader,
+                         STAT_WILL_Talent_Trader, STAT_LUCK_Talent_Trader};
+            break;
+        case Talent_Blacksmith :
+            initStats = {STAT_LIFE_Talent_Blacksmith, STAT_MANA_Talent_Blacksmith,
+                         STAT_STAM_Talent_Blacksmith, STAT_STR_Talent_Blacksmith,
+                         STAT_INT_Talent_Blacksmith, STAT_DEX_Talent_Blacksmith,
+                         STAT_WILL_Talent_Blacksmith, STAT_LUCK_Talent_Blacksmith};
+            break;
+        case Talent_Cook :
+            initStats = {STAT_LIFE_Talent_Cook, STAT_MANA_Talent_Cook,
+                         STAT_STAM_Talent_Cook, STAT_STR_Talent_Cook,
+                         STAT_INT_Talent_Cook, STAT_DEX_Talent_Cook,
+                         STAT_WILL_Talent_Cook, STAT_LUCK_Talent_Cook};
+            break;
+        case Talent_Tailor :
+            initStats = {STAT_LIFE_Talent_Tailor, STAT_MANA_Talent_Tailor,
+                         STAT_STAM_Talent_Tailor, STAT_STR_Talent_Tailor,
+                         STAT_INT_Talent_Tailor, STAT_DEX_Talent_Tailor,
+                         STAT_WILL_Talent_Tailor, STAT_LUCK_Talent_Tailor};
+            break;
+        case Talent_PotionMaker :
+            initStats = {STAT_LIFE_Talent_PotionMaker, STAT_MANA_Talent_PotionMaker,
+                         STAT_STAM_Talent_PotionMaker, STAT_STR_Talent_PotionMaker,
+                         STAT_INT_Talent_PotionMaker, STAT_DEX_Talent_PotionMaker,
+                         STAT_WILL_Talent_PotionMaker, STAT_LUCK_Talent_PotionMaker};
+            break;
+        case Talent_Carpentry :
+            initStats = {STAT_LIFE_Talent_Carpentry, STAT_MANA_Talent_Carpentry,
+                         STAT_STAM_Talent_Carpentry, STAT_STR_Talent_Carpentry,
+                         STAT_INT_Talent_Carpentry, STAT_DEX_Talent_Carpentry,
+                         STAT_WILL_Talent_Carpentry, STAT_LUCK_Talent_Carpentry};
+            break;
+        case Talent_Traveler :
+            initStats = {STAT_LIFE_Talent_Traveler, STAT_MANA_Talent_Traveler,
+                         STAT_STAM_Talent_Traveler, STAT_STR_Talent_Traveler,
+                         STAT_INT_Talent_Traveler, STAT_DEX_Talent_Traveler,
+                         STAT_WILL_Talent_Traveler, STAT_LUCK_Talent_Traveler};
+            break;
+        case Talent_Marionette :
+            initStats = {STAT_LIFE_Talent_Marionette, STAT_MANA_Talent_Marionette,
+                         STAT_STAM_Talent_Marionette, STAT_STR_Talent_Marionette,
+                         STAT_INT_Talent_Marionette, STAT_DEX_Talent_Marionette,
+                         STAT_WILL_Talent_Marionette, STAT_LUCK_Talent_Marionette};
+            break;
+        case Talent_Shooter :
+            initStats = {STAT_LIFE_Talent_Shooter, STAT_MANA_Talent_Shooter,
+                         STAT_STAM_Talent_Shooter, STAT_STR_Talent_Shooter,
+                         STAT_INT_Talent_Shooter, STAT_DEX_Talent_Shooter,
+                         STAT_WILL_Talent_Shooter, STAT_LUCK_Talent_Shooter};
+            break;
+        case Talent_Ninja :
+            initStats = {STAT_LIFE_Talent_Ninja, STAT_MANA_Talent_Ninja,
+                         STAT_STAM_Talent_Ninja, STAT_STR_Talent_Ninja,
+                         STAT_INT_Talent_Ninja, STAT_DEX_Talent_Ninja,
+                         STAT_WILL_Talent_Ninja, STAT_LUCK_Talent_Ninja};
+            break;
+        case Talent_ChainBlade :
+            initStats = {STAT_LIFE_Talent_ChainBlade, STAT_MANA_Talent_ChainBlade,
+                         STAT_STAM_Talent_ChainBlade, STAT_STR_Talent_ChainBlade,
+                         STAT_INT_Talent_ChainBlade, STAT_DEX_Talent_ChainBlade,
+                         STAT_WILL_Talent_ChainBlade, STAT_LUCK_Talent_ChainBlade};
+            break;
+        case Talent_Merlin :
+            initStats = {STAT_LIFE_Talent_Merlin, STAT_MANA_Talent_Merlin,
+                         STAT_STAM_Talent_Merlin, STAT_STR_Talent_Merlin,
+                         STAT_INT_Talent_Merlin, STAT_DEX_Talent_Merlin,
+                         STAT_WILL_Talent_Merlin, STAT_LUCK_Talent_Merlin};
+            break;
+        case Talent_Diva :
+            initStats = {STAT_LIFE_Talent_Diva, STAT_MANA_Talent_Diva,
+                         STAT_STAM_Talent_Diva, STAT_STR_Talent_Diva,
+                         STAT_INT_Talent_Diva, STAT_DEX_Talent_Diva,
+                         STAT_WILL_Talent_Diva, STAT_LUCK_Talent_Diva};
+            break;
+        case Talent_ProfessorJ :
+            initStats = {STAT_LIFE_Talent_ProfessorJ, STAT_MANA_Talent_ProfessorJ,
+                         STAT_STAM_Talent_ProfessorJ, STAT_STR_Talent_ProfessorJ,
+                         STAT_INT_Talent_ProfessorJ, STAT_DEX_Talent_ProfessorJ,
+                         STAT_WILL_Talent_ProfessorJ, STAT_LUCK_Talent_ProfessorJ};
+            break;
+        case Talent_MasterChef :
+            initStats = {STAT_LIFE_Talent_MasterChef, STAT_MANA_Talent_MasterChef,
+                         STAT_STAM_Talent_MasterChef, STAT_STR_Talent_MasterChef,
+                         STAT_INT_Talent_MasterChef, STAT_DEX_Talent_MasterChef,
+                         STAT_WILL_Talent_MasterChef, STAT_LUCK_Talent_MasterChef};
+            break;
+        case Talent_TreasureHunter:
+            initStats = {STAT_LIFE_Talent_TreasureHunter, STAT_MANA_Talent_TreasureHunter,
+                         STAT_STAM_Talent_TreasureHunter, STAT_STR_Talent_TreasureHunter,
+                         STAT_INT_Talent_TreasureHunter, STAT_DEX_Talent_TreasureHunter,
+                         STAT_WILL_Talent_TreasureHunter, STAT_LUCK_Talent_TreasureHunter};
+            break;
+        case Talent_PetHandler:
+            initStats = {STAT_LIFE_Talent_PetHandler, STAT_MANA_Talent_PetHandler,
+                         STAT_STAM_Talent_PetHandler, STAT_STR_Talent_PetHandler,
+                         STAT_INT_Talent_PetHandler, STAT_DEX_Talent_PetHandler,
+                         STAT_WILL_Talent_PetHandler, STAT_LUCK_Talent_PetHandler};
+            break;
+        case Talent_MagiGraphy:
+            initStats = {STAT_LIFE_Talent_MagiGraphy, STAT_MANA_Talent_MagiGraphy,
+                         STAT_STAM_Talent_MagiGraphy, STAT_STR_Talent_MagiGraphy,
+                         STAT_INT_Talent_MagiGraphy, STAT_DEX_Talent_MagiGraphy,
+                         STAT_WILL_Talent_MagiGraphy, STAT_LUCK_Talent_MagiGraphy};
+            break;
+        default:
+            break;
         }
         vecStatTalent.push_back(initStats);
     }
@@ -726,89 +807,170 @@ void MainWindow::InitializeStats() {
     for(int i = TALENT::Talent_Combat; i < TALENT::Talent_TreasureHunter + 1 ; i++) {
         Stats initStats;
         switch(i) {
-            case Talent_Bonus_Combat:
-                initStats = {STAT_LIFE_Talent_Bonus_Combat, STAT_MANA_Talent_Bonus_Combat, STAT_STAM_Talent_Bonus_Combat, STAT_STR_Talent_Bonus_Combat, STAT_INT_Talent_Bonus_Combat, STAT_DEX_Talent_Bonus_Combat, STAT_WILL_Talent_Bonus_Combat, STAT_LUCK_Talent_Bonus_Combat};
-                break;
-            case Talent_Bonus_Lance:
-                initStats = {STAT_LIFE_Talent_Bonus_Lance, STAT_MANA_Talent_Bonus_Lance, STAT_STAM_Talent_Bonus_Lance, STAT_STR_Talent_Bonus_Lance, STAT_INT_Talent_Bonus_Lance, STAT_DEX_Talent_Bonus_Lance, STAT_WILL_Talent_Bonus_Lance, STAT_LUCK_Talent_Bonus_Lance};
-                break;
-            case Talent_Bonus_RangeCombat:
-                initStats = {STAT_LIFE_Talent_Bonus_RangeCombat, STAT_MANA_Talent_Bonus_RangeCombat, STAT_STAM_Talent_Bonus_RangeCombat, STAT_STR_Talent_Bonus_RangeCombat, STAT_INT_Talent_Bonus_RangeCombat, STAT_DEX_Talent_Bonus_RangeCombat, STAT_WILL_Talent_Bonus_RangeCombat, STAT_LUCK_Talent_Bonus_RangeCombat};
-                break;
-            case Talent_Bonus_Mage:
-                initStats = {STAT_LIFE_Talent_Bonus_Mage, STAT_MANA_Talent_Bonus_Mage, STAT_STAM_Talent_Bonus_Mage, STAT_STR_Talent_Bonus_Mage, STAT_INT_Talent_Bonus_Mage, STAT_DEX_Talent_Bonus_Mage, STAT_WILL_Talent_Bonus_Mage, STAT_LUCK_Talent_Bonus_Mage};
-                break;
-            case Talent_Bonus_Priest:
-                initStats = {STAT_LIFE_Talent_Bonus_Priest, STAT_MANA_Talent_Bonus_Priest, STAT_STAM_Talent_Bonus_Priest, STAT_STR_Talent_Bonus_Priest, STAT_INT_Talent_Bonus_Priest, STAT_DEX_Talent_Bonus_Priest, STAT_WILL_Talent_Bonus_Priest, STAT_LUCK_Talent_Bonus_Priest};
-                break;
-            case Talent_Bonus_Monk :
-                initStats = {STAT_LIFE_Talent_Bonus_Monk, STAT_MANA_Talent_Bonus_Monk, STAT_STAM_Talent_Bonus_Monk, STAT_STR_Talent_Bonus_Monk, STAT_INT_Talent_Bonus_Monk, STAT_DEX_Talent_Bonus_Monk, STAT_WILL_Talent_Bonus_Monk, STAT_LUCK_Talent_Bonus_Monk};
-                break;
-            case Talent_Bonus_Bard :
-                initStats = {STAT_LIFE_Talent_Bonus_Bard, STAT_MANA_Talent_Bonus_Bard, STAT_STAM_Talent_Bonus_Bard, STAT_STR_Talent_Bonus_Bard, STAT_INT_Talent_Bonus_Bard, STAT_DEX_Talent_Bonus_Bard, STAT_WILL_Talent_Bonus_Bard, STAT_LUCK_Talent_Bonus_Bard};
-                break;
-            case Talent_Bonus_CombatAlchemist :
-                initStats = {STAT_LIFE_Talent_Bonus_CombatAlchemist, STAT_MANA_Talent_Bonus_CombatAlchemist, STAT_STAM_Talent_Bonus_CombatAlchemist, STAT_STR_Talent_Bonus_CombatAlchemist, STAT_INT_Talent_Bonus_CombatAlchemist, STAT_DEX_Talent_Bonus_CombatAlchemist, STAT_WILL_Talent_Bonus_CombatAlchemist, STAT_LUCK_Talent_Bonus_CombatAlchemist};
-                break;
-            case Talent_Bonus_TransemuteAlchemist :
-                initStats = {STAT_LIFE_Talent_Bonus_TransemuteAlchemist, STAT_MANA_Talent_Bonus_TransemuteAlchemist, STAT_STAM_Talent_Bonus_TransemuteAlchemist, STAT_STR_Talent_Bonus_TransemuteAlchemist, STAT_INT_Talent_Bonus_TransemuteAlchemist, STAT_DEX_Talent_Bonus_TransemuteAlchemist, STAT_WILL_Talent_Bonus_TransemuteAlchemist, STAT_LUCK_Talent_Bonus_TransemuteAlchemist};
-                break;
-            case Talent_Bonus_Trader :
-                initStats = {STAT_LIFE_Talent_Bonus_Trader, STAT_MANA_Talent_Bonus_Trader, STAT_STAM_Talent_Bonus_Trader, STAT_STR_Talent_Bonus_Trader, STAT_INT_Talent_Bonus_Trader, STAT_DEX_Talent_Bonus_Trader, STAT_WILL_Talent_Bonus_Trader, STAT_LUCK_Talent_Bonus_Trader};
-                break;
-            case Talent_Bonus_Blacksmith :
-                initStats = {STAT_LIFE_Talent_Bonus_Blacksmith, STAT_MANA_Talent_Bonus_Blacksmith, STAT_STAM_Talent_Bonus_Blacksmith, STAT_STR_Talent_Bonus_Blacksmith, STAT_INT_Talent_Bonus_Blacksmith, STAT_DEX_Talent_Bonus_Blacksmith, STAT_WILL_Talent_Bonus_Blacksmith, STAT_LUCK_Talent_Bonus_Blacksmith};
-                break;
-            case Talent_Bonus_Cook :
-                initStats = {STAT_LIFE_Talent_Bonus_Cook, STAT_MANA_Talent_Bonus_Cook, STAT_STAM_Talent_Bonus_Cook, STAT_STR_Talent_Bonus_Cook, STAT_INT_Talent_Bonus_Cook, STAT_DEX_Talent_Bonus_Cook, STAT_WILL_Talent_Bonus_Cook, STAT_LUCK_Talent_Bonus_Cook};
-                break;
-            case Talent_Bonus_Tailor :
-                initStats = {STAT_LIFE_Talent_Bonus_Tailor, STAT_MANA_Talent_Bonus_Tailor, STAT_STAM_Talent_Bonus_Tailor, STAT_STR_Talent_Bonus_Tailor, STAT_INT_Talent_Bonus_Tailor, STAT_DEX_Talent_Bonus_Tailor, STAT_WILL_Talent_Bonus_Tailor, STAT_LUCK_Talent_Bonus_Tailor};
-                break;
-            case Talent_Bonus_PotionMaker :
-                initStats = {STAT_LIFE_Talent_Bonus_PotionMaker, STAT_MANA_Talent_Bonus_PotionMaker, STAT_STAM_Talent_Bonus_PotionMaker, STAT_STR_Talent_Bonus_PotionMaker, STAT_INT_Talent_Bonus_PotionMaker, STAT_DEX_Talent_Bonus_PotionMaker, STAT_WILL_Talent_Bonus_PotionMaker, STAT_LUCK_Talent_Bonus_PotionMaker};
-                break;
-            case Talent_Bonus_Carpentry :
-                initStats = {STAT_LIFE_Talent_Bonus_Carpentry, STAT_MANA_Talent_Bonus_Carpentry, STAT_STAM_Talent_Bonus_Carpentry, STAT_STR_Talent_Bonus_Carpentry, STAT_INT_Talent_Bonus_Carpentry, STAT_DEX_Talent_Bonus_Carpentry, STAT_WILL_Talent_Bonus_Carpentry, STAT_LUCK_Talent_Bonus_Carpentry};
-                break;
-            case Talent_Bonus_Traveler :
-                initStats = {STAT_LIFE_Talent_Bonus_Traveler, STAT_MANA_Talent_Bonus_Traveler, STAT_STAM_Talent_Bonus_Traveler, STAT_STR_Talent_Bonus_Traveler, STAT_INT_Talent_Bonus_Traveler, STAT_DEX_Talent_Bonus_Traveler, STAT_WILL_Talent_Bonus_Traveler, STAT_LUCK_Talent_Bonus_Traveler};
-                break;
-            case Talent_Bonus_Marionette :
-                initStats = {STAT_LIFE_Talent_Bonus_Marionette, STAT_MANA_Talent_Bonus_Marionette, STAT_STAM_Talent_Bonus_Marionette, STAT_STR_Talent_Bonus_Marionette, STAT_INT_Talent_Bonus_Marionette, STAT_DEX_Talent_Bonus_Marionette, STAT_WILL_Talent_Bonus_Marionette, STAT_LUCK_Talent_Bonus_Marionette};
-                break;
-            case Talent_Bonus_Shooter :
-                initStats = {STAT_LIFE_Talent_Bonus_Shooter, STAT_MANA_Talent_Bonus_Shooter, STAT_STAM_Talent_Bonus_Shooter, STAT_STR_Talent_Bonus_Shooter, STAT_INT_Talent_Bonus_Shooter, STAT_DEX_Talent_Bonus_Shooter, STAT_WILL_Talent_Bonus_Shooter, STAT_LUCK_Talent_Bonus_Shooter};
-                break;
-            case Talent_Bonus_Ninja :
-                initStats = {STAT_LIFE_Talent_Bonus_Ninja, STAT_MANA_Talent_Bonus_Ninja, STAT_STAM_Talent_Bonus_Ninja, STAT_STR_Talent_Bonus_Ninja, STAT_INT_Talent_Bonus_Ninja, STAT_DEX_Talent_Bonus_Ninja, STAT_WILL_Talent_Bonus_Ninja, STAT_LUCK_Talent_Bonus_Ninja};
-                break;
-            case Talent_Bonus_ChainBlade :
-                initStats = {STAT_LIFE_Talent_Bonus_ChainBlade, STAT_MANA_Talent_Bonus_ChainBlade, STAT_STAM_Talent_Bonus_ChainBlade, STAT_STR_Talent_Bonus_ChainBlade, STAT_INT_Talent_Bonus_ChainBlade, STAT_DEX_Talent_Bonus_ChainBlade, STAT_WILL_Talent_Bonus_ChainBlade, STAT_LUCK_Talent_Bonus_ChainBlade};
-                break;
-            case Talent_Bonus_Merlin :
-                initStats = {STAT_LIFE_Talent_Bonus_Merlin, STAT_MANA_Talent_Bonus_Merlin, STAT_STAM_Talent_Bonus_Merlin, STAT_STR_Talent_Bonus_Merlin, STAT_INT_Talent_Bonus_Merlin, STAT_DEX_Talent_Bonus_Merlin, STAT_WILL_Talent_Bonus_Merlin, STAT_LUCK_Talent_Bonus_Merlin};
-                break;
-            case Talent_Bonus_Diva :
-                initStats = {STAT_LIFE_Talent_Bonus_Diva, STAT_MANA_Talent_Bonus_Diva, STAT_STAM_Talent_Bonus_Diva, STAT_STR_Talent_Bonus_Diva, STAT_INT_Talent_Bonus_Diva, STAT_DEX_Talent_Bonus_Diva, STAT_WILL_Talent_Bonus_Diva, STAT_LUCK_Talent_Bonus_Diva};
-                break;
-            case Talent_Bonus_ProfessorJ :
-                initStats = {STAT_LIFE_Talent_Bonus_ProfessorJ, STAT_MANA_Talent_Bonus_ProfessorJ, STAT_STAM_Talent_Bonus_ProfessorJ, STAT_STR_Talent_Bonus_ProfessorJ, STAT_INT_Talent_Bonus_ProfessorJ, STAT_DEX_Talent_Bonus_ProfessorJ, STAT_WILL_Talent_Bonus_ProfessorJ, STAT_LUCK_Talent_Bonus_ProfessorJ};
-                break;
-            case Talent_Bonus_MasterChef :
-                initStats = {STAT_LIFE_Talent_Bonus_MasterChef, STAT_MANA_Talent_Bonus_MasterChef, STAT_STAM_Talent_Bonus_MasterChef, STAT_STR_Talent_Bonus_MasterChef, STAT_INT_Talent_Bonus_MasterChef, STAT_DEX_Talent_Bonus_MasterChef, STAT_WILL_Talent_Bonus_MasterChef, STAT_LUCK_Talent_Bonus_MasterChef};
-                break;
-            case Talent_Bonus_TreasureHunter:
-                initStats = {STAT_LIFE_Talent_Bonus_TreasureHunter, STAT_MANA_Talent_Bonus_TreasureHunter, STAT_STAM_Talent_Bonus_TreasureHunter, STAT_STR_Talent_Bonus_TreasureHunter, STAT_INT_Talent_Bonus_TreasureHunter, STAT_DEX_Talent_Bonus_TreasureHunter, STAT_WILL_Talent_Bonus_TreasureHunter, STAT_LUCK_Talent_Bonus_TreasureHunter};
-                break;
-            case Talent_Bonus_PetHandler:
-                initStats = {STAT_LIFE_Talent_Bonus_PetHandler, STAT_MANA_Talent_Bonus_PetHandler, STAT_STAM_Talent_Bonus_PetHandler, STAT_STR_Talent_Bonus_PetHandler, STAT_INT_Talent_Bonus_PetHandler, STAT_DEX_Talent_Bonus_PetHandler, STAT_WILL_Talent_Bonus_PetHandler, STAT_LUCK_Talent_Bonus_PetHandler};
-                break;
-            case Talent_Bonus_MagiGraphy:
-                initStats = {STAT_LIFE_Talent_Bonus_MagiGraphy, STAT_MANA_Talent_Bonus_MagiGraphy, STAT_STAM_Talent_Bonus_MagiGraphy, STAT_STR_Talent_Bonus_MagiGraphy, STAT_INT_Talent_Bonus_MagiGraphy, STAT_DEX_Talent_Bonus_MagiGraphy, STAT_WILL_Talent_Bonus_MagiGraphy, STAT_LUCK_Talent_Bonus_MagiGraphy};
-                break;
-            default:
-                break;
+        case Talent_Bonus_Combat:
+            initStats = {STAT_LIFE_Talent_Bonus_Combat, STAT_MANA_Talent_Bonus_Combat,
+                         STAT_STAM_Talent_Bonus_Combat, STAT_STR_Talent_Bonus_Combat,
+                         STAT_INT_Talent_Bonus_Combat, STAT_DEX_Talent_Bonus_Combat,
+                         STAT_WILL_Talent_Bonus_Combat, STAT_LUCK_Talent_Bonus_Combat};
+            break;
+        case Talent_Bonus_Lance:
+            initStats = {STAT_LIFE_Talent_Bonus_Lance, STAT_MANA_Talent_Bonus_Lance,
+                         STAT_STAM_Talent_Bonus_Lance, STAT_STR_Talent_Bonus_Lance,
+                         STAT_INT_Talent_Bonus_Lance, STAT_DEX_Talent_Bonus_Lance,
+                         STAT_WILL_Talent_Bonus_Lance, STAT_LUCK_Talent_Bonus_Lance};
+            break;
+        case Talent_Bonus_RangeCombat:
+            initStats = {STAT_LIFE_Talent_Bonus_RangeCombat, STAT_MANA_Talent_Bonus_RangeCombat,
+                         STAT_STAM_Talent_Bonus_RangeCombat, STAT_STR_Talent_Bonus_RangeCombat,
+                         STAT_INT_Talent_Bonus_RangeCombat, STAT_DEX_Talent_Bonus_RangeCombat,
+                         STAT_WILL_Talent_Bonus_RangeCombat, STAT_LUCK_Talent_Bonus_RangeCombat};
+            break;
+        case Talent_Bonus_Mage:
+            initStats = {STAT_LIFE_Talent_Bonus_Mage, STAT_MANA_Talent_Bonus_Mage,
+                         STAT_STAM_Talent_Bonus_Mage, STAT_STR_Talent_Bonus_Mage,
+                         STAT_INT_Talent_Bonus_Mage, STAT_DEX_Talent_Bonus_Mage,
+                         STAT_WILL_Talent_Bonus_Mage, STAT_LUCK_Talent_Bonus_Mage};
+            break;
+        case Talent_Bonus_Priest:
+            initStats = {STAT_LIFE_Talent_Bonus_Priest, STAT_MANA_Talent_Bonus_Priest,
+                         STAT_STAM_Talent_Bonus_Priest, STAT_STR_Talent_Bonus_Priest,
+                         STAT_INT_Talent_Bonus_Priest, STAT_DEX_Talent_Bonus_Priest,
+                         STAT_WILL_Talent_Bonus_Priest, STAT_LUCK_Talent_Bonus_Priest};
+            break;
+        case Talent_Bonus_Monk :
+            initStats = {STAT_LIFE_Talent_Bonus_Monk, STAT_MANA_Talent_Bonus_Monk,
+                         STAT_STAM_Talent_Bonus_Monk, STAT_STR_Talent_Bonus_Monk,
+                         STAT_INT_Talent_Bonus_Monk, STAT_DEX_Talent_Bonus_Monk,
+                         STAT_WILL_Talent_Bonus_Monk, STAT_LUCK_Talent_Bonus_Monk};
+            break;
+        case Talent_Bonus_Bard :
+            initStats = {STAT_LIFE_Talent_Bonus_Bard, STAT_MANA_Talent_Bonus_Bard,
+                         STAT_STAM_Talent_Bonus_Bard, STAT_STR_Talent_Bonus_Bard,
+                         STAT_INT_Talent_Bonus_Bard, STAT_DEX_Talent_Bonus_Bard,
+                         STAT_WILL_Talent_Bonus_Bard, STAT_LUCK_Talent_Bonus_Bard};
+            break;
+        case Talent_Bonus_CombatAlchemist :
+            initStats = {STAT_LIFE_Talent_Bonus_CombatAlchemist, STAT_MANA_Talent_Bonus_CombatAlchemist,
+                         STAT_STAM_Talent_Bonus_CombatAlchemist, STAT_STR_Talent_Bonus_CombatAlchemist,
+                         STAT_INT_Talent_Bonus_CombatAlchemist, STAT_DEX_Talent_Bonus_CombatAlchemist,
+                         STAT_WILL_Talent_Bonus_CombatAlchemist, STAT_LUCK_Talent_Bonus_CombatAlchemist};
+            break;
+        case Talent_Bonus_TransemuteAlchemist :
+            initStats = {STAT_LIFE_Talent_Bonus_TransemuteAlchemist, STAT_MANA_Talent_Bonus_TransemuteAlchemist,
+                         STAT_STAM_Talent_Bonus_TransemuteAlchemist, STAT_STR_Talent_Bonus_TransemuteAlchemist,
+                         STAT_INT_Talent_Bonus_TransemuteAlchemist, STAT_DEX_Talent_Bonus_TransemuteAlchemist,
+                         STAT_WILL_Talent_Bonus_TransemuteAlchemist, STAT_LUCK_Talent_Bonus_TransemuteAlchemist};
+            break;
+        case Talent_Bonus_Trader :
+            initStats = {STAT_LIFE_Talent_Bonus_Trader, STAT_MANA_Talent_Bonus_Trader,
+                         STAT_STAM_Talent_Bonus_Trader, STAT_STR_Talent_Bonus_Trader,
+                         STAT_INT_Talent_Bonus_Trader, STAT_DEX_Talent_Bonus_Trader,
+                         STAT_WILL_Talent_Bonus_Trader, STAT_LUCK_Talent_Bonus_Trader};
+            break;
+        case Talent_Bonus_Blacksmith :
+            initStats = {STAT_LIFE_Talent_Bonus_Blacksmith, STAT_MANA_Talent_Bonus_Blacksmith,
+                         STAT_STAM_Talent_Bonus_Blacksmith, STAT_STR_Talent_Bonus_Blacksmith,
+                         STAT_INT_Talent_Bonus_Blacksmith, STAT_DEX_Talent_Bonus_Blacksmith,
+                         STAT_WILL_Talent_Bonus_Blacksmith, STAT_LUCK_Talent_Bonus_Blacksmith};
+            break;
+        case Talent_Bonus_Cook :
+            initStats = {STAT_LIFE_Talent_Bonus_Cook, STAT_MANA_Talent_Bonus_Cook,
+                         STAT_STAM_Talent_Bonus_Cook, STAT_STR_Talent_Bonus_Cook,
+                         STAT_INT_Talent_Bonus_Cook, STAT_DEX_Talent_Bonus_Cook,
+                         STAT_WILL_Talent_Bonus_Cook, STAT_LUCK_Talent_Bonus_Cook};
+            break;
+        case Talent_Bonus_Tailor :
+            initStats = {STAT_LIFE_Talent_Bonus_Tailor, STAT_MANA_Talent_Bonus_Tailor,
+                         STAT_STAM_Talent_Bonus_Tailor, STAT_STR_Talent_Bonus_Tailor,
+                         STAT_INT_Talent_Bonus_Tailor, STAT_DEX_Talent_Bonus_Tailor,
+                         STAT_WILL_Talent_Bonus_Tailor, STAT_LUCK_Talent_Bonus_Tailor};
+            break;
+        case Talent_Bonus_PotionMaker :
+            initStats = {STAT_LIFE_Talent_Bonus_PotionMaker, STAT_MANA_Talent_Bonus_PotionMaker,
+                         STAT_STAM_Talent_Bonus_PotionMaker, STAT_STR_Talent_Bonus_PotionMaker,
+                         STAT_INT_Talent_Bonus_PotionMaker, STAT_DEX_Talent_Bonus_PotionMaker,
+                         STAT_WILL_Talent_Bonus_PotionMaker, STAT_LUCK_Talent_Bonus_PotionMaker};
+            break;
+        case Talent_Bonus_Carpentry :
+            initStats = {STAT_LIFE_Talent_Bonus_Carpentry, STAT_MANA_Talent_Bonus_Carpentry,
+                         STAT_STAM_Talent_Bonus_Carpentry, STAT_STR_Talent_Bonus_Carpentry,
+                         STAT_INT_Talent_Bonus_Carpentry, STAT_DEX_Talent_Bonus_Carpentry,
+                         STAT_WILL_Talent_Bonus_Carpentry, STAT_LUCK_Talent_Bonus_Carpentry};
+            break;
+        case Talent_Bonus_Traveler :
+            initStats = {STAT_LIFE_Talent_Bonus_Traveler, STAT_MANA_Talent_Bonus_Traveler,
+                         STAT_STAM_Talent_Bonus_Traveler, STAT_STR_Talent_Bonus_Traveler,
+                         STAT_INT_Talent_Bonus_Traveler, STAT_DEX_Talent_Bonus_Traveler,
+                         STAT_WILL_Talent_Bonus_Traveler, STAT_LUCK_Talent_Bonus_Traveler};
+            break;
+        case Talent_Bonus_Marionette :
+            initStats = {STAT_LIFE_Talent_Bonus_Marionette, STAT_MANA_Talent_Bonus_Marionette,
+                         STAT_STAM_Talent_Bonus_Marionette, STAT_STR_Talent_Bonus_Marionette,
+                         STAT_INT_Talent_Bonus_Marionette, STAT_DEX_Talent_Bonus_Marionette,
+                         STAT_WILL_Talent_Bonus_Marionette, STAT_LUCK_Talent_Bonus_Marionette};
+            break;
+        case Talent_Bonus_Shooter :
+            initStats = {STAT_LIFE_Talent_Bonus_Shooter, STAT_MANA_Talent_Bonus_Shooter,
+                         STAT_STAM_Talent_Bonus_Shooter, STAT_STR_Talent_Bonus_Shooter,
+                         STAT_INT_Talent_Bonus_Shooter, STAT_DEX_Talent_Bonus_Shooter,
+                         STAT_WILL_Talent_Bonus_Shooter, STAT_LUCK_Talent_Bonus_Shooter};
+            break;
+        case Talent_Bonus_Ninja :
+            initStats = {STAT_LIFE_Talent_Bonus_Ninja, STAT_MANA_Talent_Bonus_Ninja,
+                         STAT_STAM_Talent_Bonus_Ninja, STAT_STR_Talent_Bonus_Ninja,
+                         STAT_INT_Talent_Bonus_Ninja, STAT_DEX_Talent_Bonus_Ninja,
+                         STAT_WILL_Talent_Bonus_Ninja, STAT_LUCK_Talent_Bonus_Ninja};
+            break;
+        case Talent_Bonus_ChainBlade :
+            initStats = {STAT_LIFE_Talent_Bonus_ChainBlade, STAT_MANA_Talent_Bonus_ChainBlade,
+                         STAT_STAM_Talent_Bonus_ChainBlade, STAT_STR_Talent_Bonus_ChainBlade,
+                         STAT_INT_Talent_Bonus_ChainBlade, STAT_DEX_Talent_Bonus_ChainBlade,
+                         STAT_WILL_Talent_Bonus_ChainBlade, STAT_LUCK_Talent_Bonus_ChainBlade};
+            break;
+        case Talent_Bonus_Merlin :
+            initStats = {STAT_LIFE_Talent_Bonus_Merlin, STAT_MANA_Talent_Bonus_Merlin,
+                         STAT_STAM_Talent_Bonus_Merlin, STAT_STR_Talent_Bonus_Merlin,
+                         STAT_INT_Talent_Bonus_Merlin, STAT_DEX_Talent_Bonus_Merlin,
+                         STAT_WILL_Talent_Bonus_Merlin, STAT_LUCK_Talent_Bonus_Merlin};
+            break;
+        case Talent_Bonus_Diva :
+            initStats = {STAT_LIFE_Talent_Bonus_Diva, STAT_MANA_Talent_Bonus_Diva,
+                         STAT_STAM_Talent_Bonus_Diva, STAT_STR_Talent_Bonus_Diva,
+                         STAT_INT_Talent_Bonus_Diva, STAT_DEX_Talent_Bonus_Diva,
+                         STAT_WILL_Talent_Bonus_Diva, STAT_LUCK_Talent_Bonus_Diva};
+            break;
+        case Talent_Bonus_ProfessorJ :
+            initStats = {STAT_LIFE_Talent_Bonus_ProfessorJ, STAT_MANA_Talent_Bonus_ProfessorJ,
+                         STAT_STAM_Talent_Bonus_ProfessorJ, STAT_STR_Talent_Bonus_ProfessorJ,
+                         STAT_INT_Talent_Bonus_ProfessorJ, STAT_DEX_Talent_Bonus_ProfessorJ,
+                         STAT_WILL_Talent_Bonus_ProfessorJ, STAT_LUCK_Talent_Bonus_ProfessorJ};
+            break;
+        case Talent_Bonus_MasterChef :
+            initStats = {STAT_LIFE_Talent_Bonus_MasterChef, STAT_MANA_Talent_Bonus_MasterChef,
+                         STAT_STAM_Talent_Bonus_MasterChef, STAT_STR_Talent_Bonus_MasterChef,
+                         STAT_INT_Talent_Bonus_MasterChef, STAT_DEX_Talent_Bonus_MasterChef,
+                         STAT_WILL_Talent_Bonus_MasterChef, STAT_LUCK_Talent_Bonus_MasterChef};
+            break;
+        case Talent_Bonus_TreasureHunter:
+            initStats = {STAT_LIFE_Talent_Bonus_TreasureHunter, STAT_MANA_Talent_Bonus_TreasureHunter,
+                         STAT_STAM_Talent_Bonus_TreasureHunter, STAT_STR_Talent_Bonus_TreasureHunter,
+                         STAT_INT_Talent_Bonus_TreasureHunter, STAT_DEX_Talent_Bonus_TreasureHunter,
+                         STAT_WILL_Talent_Bonus_TreasureHunter, STAT_LUCK_Talent_Bonus_TreasureHunter};
+            break;
+        case Talent_Bonus_PetHandler:
+            initStats = {STAT_LIFE_Talent_Bonus_PetHandler, STAT_MANA_Talent_Bonus_PetHandler,
+                         STAT_STAM_Talent_Bonus_PetHandler, STAT_STR_Talent_Bonus_PetHandler,
+                         STAT_INT_Talent_Bonus_PetHandler, STAT_DEX_Talent_Bonus_PetHandler,
+                         STAT_WILL_Talent_Bonus_PetHandler, STAT_LUCK_Talent_Bonus_PetHandler};
+            break;
+        case Talent_Bonus_MagiGraphy:
+            initStats = {STAT_LIFE_Talent_Bonus_MagiGraphy, STAT_MANA_Talent_Bonus_MagiGraphy,
+                         STAT_STAM_Talent_Bonus_MagiGraphy, STAT_STR_Talent_Bonus_MagiGraphy,
+                         STAT_INT_Talent_Bonus_MagiGraphy, STAT_DEX_Talent_Bonus_MagiGraphy,
+                         STAT_WILL_Talent_Bonus_MagiGraphy, STAT_LUCK_Talent_Bonus_MagiGraphy};
+            break;
+        default:
+            break;
         }
         vecStatTalentBonus.push_back(initStats);
     }
