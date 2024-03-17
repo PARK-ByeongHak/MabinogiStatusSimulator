@@ -5,15 +5,17 @@
 #include <vector>
 
 
-// 샤인 오브 이웨카와 에코스톤 등의 효과 제외하고 최대 수치
+// 샤인 오브 이웨카와 에코스톤, 토템 등의 효과들을 제외하고 최대 수치
+#define HUMAN_LIFE_MAX 2500
+#define HUMAN_MANA_MAX 2500
+#define HUMAN_STAM_MAX 2500
 #define HUMAN_STR_MAX 1900
 #define HUMAN_INT_MAX 1900
 #define HUMAN_DEX_MAX 1900
 #define HUMAN_WILL_MAX 1900
 #define HUMAN_LUCK_MAX 1900
 
-enum AGE
-{
+enum AGE {
     AGE_10 = 0,
     AGE_11,
     AGE_12,
@@ -21,10 +23,17 @@ enum AGE
     AGE_14,
     AGE_15,
     AGE_16,
-    AGE_17
+    AGE_17,
+    AGE_18,
+    AGE_19,
+    AGE_20,
+    AGE_21,
+    AGE_22,
+    AGE_23,
+    AGE_24,
+    AGE_25이상,
 };
-enum TALENT
-{
+enum TALENT {
     Talent_Combat = 0,
     Talent_Mage,
     Talent_RangeCombat,
@@ -53,8 +62,7 @@ enum TALENT
     Talent_MasterChef,
     Talent_TreasureHunter
 };
-enum TALENT_BONUS
-{
+enum TALENT_BONUS {
     Talent_Bonus_Combat = 0,
     Talent_Bonus_Mage,
     Talent_Bonus_RangeCombat,
@@ -84,8 +92,10 @@ enum TALENT_BONUS
     Talent_Bonus_TreasureHunter
 };
 
-struct Stats
-{
+struct Stats {
+    float statLife;
+    float statMana;
+    float statStam;
     float statStr;
     float statInt;
     float statDex;
@@ -97,8 +107,7 @@ QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
 
-class MainWindow : public QMainWindow
-{
+class MainWindow : public QMainWindow {
     Q_OBJECT
 
 public:

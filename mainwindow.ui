@@ -17,7 +17,7 @@
    <widget class="QComboBox" name="comboAge">
     <property name="geometry">
      <rect>
-      <x>80</x>
+      <x>210</x>
       <y>30</y>
       <width>91</width>
       <height>22</height>
@@ -27,10 +27,10 @@
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>40</x>
+      <x>180</x>
       <y>30</y>
       <width>41</width>
-      <height>21</height>
+      <height>16</height>
      </rect>
     </property>
     <property name="text">
@@ -40,7 +40,7 @@
    <widget class="QLabel" name="label_2">
     <property name="geometry">
      <rect>
-      <x>40</x>
+      <x>180</x>
       <y>60</y>
       <width>48</width>
       <height>16</height>
@@ -53,7 +53,7 @@
    <widget class="QComboBox" name="comboTalent">
     <property name="geometry">
      <rect>
-      <x>80</x>
+      <x>210</x>
       <y>60</y>
       <width>91</width>
       <height>22</height>
@@ -64,7 +64,7 @@
     <property name="geometry">
      <rect>
       <x>40</x>
-      <y>90</y>
+      <y>30</y>
       <width>48</width>
       <height>16</height>
      </rect>
@@ -76,8 +76,8 @@
    <widget class="QLineEdit" name="leCombatLevel">
     <property name="geometry">
      <rect>
-      <x>80</x>
-      <y>90</y>
+      <x>70</x>
+      <y>30</y>
       <width>91</width>
       <height>21</height>
      </rect>
@@ -87,7 +87,7 @@
     <property name="geometry">
      <rect>
       <x>40</x>
-      <y>150</y>
+      <y>190</y>
       <width>48</width>
       <height>16</height>
      </rect>
@@ -100,7 +100,7 @@
     <property name="geometry">
      <rect>
       <x>40</x>
-      <y>180</y>
+      <y>219</y>
       <width>48</width>
       <height>16</height>
      </rect>
@@ -113,7 +113,7 @@
     <property name="geometry">
      <rect>
       <x>40</x>
-      <y>210</y>
+      <y>249</y>
       <width>48</width>
       <height>16</height>
      </rect>
@@ -126,7 +126,7 @@
     <property name="geometry">
      <rect>
       <x>40</x>
-      <y>240</y>
+      <y>279</y>
       <width>48</width>
       <height>16</height>
      </rect>
@@ -139,7 +139,7 @@
     <property name="geometry">
      <rect>
       <x>40</x>
-      <y>270</y>
+      <y>310</y>
       <width>48</width>
       <height>16</height>
      </rect>
@@ -151,8 +151,8 @@
    <widget class="QLineEdit" name="leStr">
     <property name="geometry">
      <rect>
-      <x>80</x>
-      <y>150</y>
+      <x>70</x>
+      <y>190</y>
       <width>91</width>
       <height>21</height>
      </rect>
@@ -161,8 +161,8 @@
    <widget class="QLineEdit" name="leInt">
     <property name="geometry">
      <rect>
-      <x>80</x>
-      <y>180</y>
+      <x>70</x>
+      <y>220</y>
       <width>91</width>
       <height>21</height>
      </rect>
@@ -171,8 +171,8 @@
    <widget class="QLineEdit" name="leDex">
     <property name="geometry">
      <rect>
-      <x>80</x>
-      <y>210</y>
+      <x>70</x>
+      <y>250</y>
       <width>91</width>
       <height>21</height>
      </rect>
@@ -181,8 +181,8 @@
    <widget class="QLineEdit" name="leWill">
     <property name="geometry">
      <rect>
-      <x>80</x>
-      <y>240</y>
+      <x>70</x>
+      <y>280</y>
       <width>91</width>
       <height>21</height>
      </rect>
@@ -191,8 +191,8 @@
    <widget class="QLineEdit" name="leLuck">
     <property name="geometry">
      <rect>
-      <x>80</x>
-      <y>270</y>
+      <x>70</x>
+      <y>310</y>
       <width>91</width>
       <height>21</height>
      </rect>
@@ -202,9 +202,9 @@
     <property name="geometry">
      <rect>
       <x>70</x>
-      <y>300</y>
+      <y>340</y>
       <width>191</width>
-      <height>24</height>
+      <height>21</height>
      </rect>
     </property>
     <property name="text">
@@ -214,8 +214,8 @@
    <widget class="QLineEdit" name="leExplorerLevel">
     <property name="geometry">
      <rect>
-      <x>80</x>
-      <y>120</y>
+      <x>70</x>
+      <y>60</y>
       <width>91</width>
       <height>21</height>
      </rect>
@@ -224,21 +224,21 @@
    <widget class="QLabel" name="label_9">
     <property name="geometry">
      <rect>
-      <x>40</x>
-      <y>120</y>
+      <x>20</x>
+      <y>60</y>
       <width>48</width>
       <height>16</height>
      </rect>
     </property>
     <property name="text">
-     <string>탐렙</string>
+     <string>탐험레벨</string>
     </property>
    </widget>
    <widget class="QLabel" name="lblStr">
     <property name="geometry">
      <rect>
-      <x>200</x>
-      <y>150</y>
+      <x>220</x>
+      <y>190</y>
       <width>61</width>
       <height>21</height>
      </rect>
@@ -250,8 +250,8 @@
    <widget class="QLabel" name="lblInt">
     <property name="geometry">
      <rect>
-      <x>200</x>
-      <y>180</y>
+      <x>220</x>
+      <y>220</y>
       <width>61</width>
       <height>21</height>
      </rect>
@@ -263,8 +263,8 @@
    <widget class="QLabel" name="lblDex">
     <property name="geometry">
      <rect>
-      <x>200</x>
-      <y>210</y>
+      <x>220</x>
+      <y>250</y>
       <width>61</width>
       <height>21</height>
      </rect>
@@ -276,8 +276,8 @@
    <widget class="QLabel" name="lblWill">
     <property name="geometry">
      <rect>
-      <x>200</x>
-      <y>240</y>
+      <x>220</x>
+      <y>280</y>
       <width>61</width>
       <height>21</height>
      </rect>
@@ -289,8 +289,129 @@
    <widget class="QLabel" name="lblLuck">
     <property name="geometry">
      <rect>
-      <x>200</x>
-      <y>270</y>
+      <x>220</x>
+      <y>310</y>
+      <width>61</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>0</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_10">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>160</y>
+      <width>71</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>스태미나</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_11">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>100</y>
+      <width>48</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>생명력</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_12">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>130</y>
+      <width>48</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>마나</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="leLife">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>100</y>
+      <width>91</width>
+      <height>21</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="leMana">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>130</y>
+      <width>91</width>
+      <height>21</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="leStam">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>160</y>
+      <width>91</width>
+      <height>21</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_13">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>160</y>
+      <width>51</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>스태미나</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lblLife">
+    <property name="geometry">
+     <rect>
+      <x>220</x>
+      <y>100</y>
+      <width>61</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>0</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lblMana">
+    <property name="geometry">
+     <rect>
+      <x>220</x>
+      <y>130</y>
+      <width>61</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>0</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lblStam">
+    <property name="geometry">
+     <rect>
+      <x>220</x>
+      <y>160</y>
       <width>61</width>
       <height>21</height>
      </rect>
