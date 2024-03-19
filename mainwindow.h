@@ -15,6 +15,11 @@
 #define HUMAN_WILL_MAX 1900
 #define HUMAN_LUCK_MAX 1900
 
+enum RACES {
+    RACES_HUMAN = 0,
+    RACES_ELF,
+    RACES_GIANT,
+};
 enum AGE {
     AGE_10 = 0,
     AGE_11,

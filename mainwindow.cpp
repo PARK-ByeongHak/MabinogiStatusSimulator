@@ -19,6 +19,10 @@ MainWindow::~MainWindow()
 
 void MainWindow::Initialize()
 {
+    ui->comboRaces->addItem("인간");
+    ui->comboRaces->addItem("엘프");
+    ui->comboRaces->addItem("자이언트");
+
     ui->comboAge->addItem("10");
     ui->comboAge->addItem("11");
     ui->comboAge->addItem("12");
@@ -115,25 +119,80 @@ void MainWindow::CalculateStats()
 }
 void MainWindow::InitializeStats() {
 
-    // 나이 별 레벨업 시 얻는 스탯
+    // 종족 및 나이 별 레벨업 시 얻는 스탯
     // 나이에 따라 레벨 업 할 때마다 아래의 스탯을 추가로 얻습니다.
     // 표기는 소수점을 가립니다.
-    const float STAT_LIFE_10 = 1.0f, STAT_MANA_10 = 0.25f, STAT_STAM_10 = 0.5f, STAT_STR_10 = 0.5f, STAT_INT_10 = 0.0f, STAT_DEX_10 = 0.5f, STAT_WILL_10 = 0.75f, STAT_LUCK_10 = 0.75f;
-    const float STAT_LIFE_11 = 1.0f, STAT_MANA_11 = 0.25f, STAT_STAM_11 = 0.5f, STAT_STR_11 = 0.5f, STAT_INT_11 = 0.0f, STAT_DEX_11 = 0.75f, STAT_WILL_11 = 0.75f, STAT_LUCK_11 = 0.5f;
-    const float STAT_LIFE_12 = 0.75f, STAT_MANA_12 = 0.25f, STAT_STAM_12 = 0.75f, STAT_STR_12 = 0.5f, STAT_INT_12 = 0.0f, STAT_DEX_12 = 0.75f, STAT_WILL_12 = 0.75f, STAT_LUCK_12 = 0.5f;
-    const float STAT_LIFE_13 = 0.75f, STAT_MANA_13 = 0.5f, STAT_STAM_13 = 0.75f, STAT_STR_13 = 0.5f, STAT_INT_13 = 0.0f, STAT_DEX_13 = 0.75f, STAT_WILL_13 = 0.75f, STAT_LUCK_13 = 0.25f;
-    const float STAT_LIFE_14 = 0.75f, STAT_MANA_14 = 0.5f, STAT_STAM_14 = 0.75f, STAT_STR_14 = 0.5f, STAT_INT_14 = 0.25f, STAT_DEX_14 = 0.5f, STAT_WILL_14 = 0.5f, STAT_LUCK_14 = 0.25f;
-    const float STAT_LIFE_15 = 0.75f, STAT_MANA_15 = 0.5f, STAT_STAM_15 = 0.75f, STAT_STR_15 = 0.5f, STAT_INT_15 = 0.5f, STAT_DEX_15 = 0.25f, STAT_WILL_15 = 0.5f, STAT_LUCK_15 = 0.0f;
-    const float STAT_LIFE_16 = 0.5f, STAT_MANA_16 = 0.75f, STAT_STAM_16 = 0.75f, STAT_STR_16 = 0.5f, STAT_INT_16 = 0.5f, STAT_DEX_16 = 0.25f, STAT_WILL_16 = 0.5f, STAT_LUCK_16 = 0.0f;
-    const float STAT_LIFE_17 = 0.5f, STAT_MANA_17 = 0.75f, STAT_STAM_17 = 0.75f, STAT_STR_17 = 0.5f, STAT_INT_17 = 0.75f, STAT_DEX_17 = 0.0f, STAT_WILL_17 = 0.25f, STAT_LUCK_17 = 0.0f;
-    const float STAT_LIFE_18 = 0.5f, STAT_MANA_18 = 0.75f, STAT_STAM_18 = 0.75f, STAT_STR_18 = 0.5f, STAT_INT_18 = 0.75f, STAT_DEX_18 = 0.0f, STAT_WILL_18 = 0.25f, STAT_LUCK_18 = 0.0f;
-    const float STAT_LIFE_19 = 0.5f, STAT_MANA_19 = 0.75f, STAT_STAM_19 = 0.75f, STAT_STR_19 = 0.5f, STAT_INT_19 = 0.75f, STAT_DEX_19 = 0.0f, STAT_WILL_19 = 0.25f, STAT_LUCK_19 = 0.0f;
-    const float STAT_LIFE_20 = 0.25f, STAT_MANA_20 = 0.75f, STAT_STAM_20 = 0.75f, STAT_STR_20 = 0.5f, STAT_INT_20 = 0.75f, STAT_DEX_20 = 0.25f, STAT_WILL_20 = 0.25f, STAT_LUCK_20 = 0.0f;
-    const float STAT_LIFE_21 = 0.25f, STAT_MANA_21 = 0.5f, STAT_STAM_21 = 0.5f, STAT_STR_21 = 0.5f, STAT_INT_21 = 1.0f, STAT_DEX_21 = 0.5f, STAT_WILL_21 = 0.25f, STAT_LUCK_21 = 0.0f;
-    const float STAT_LIFE_22 = 0.25f, STAT_MANA_22 = 0.5f, STAT_STAM_22 = 0.25f, STAT_STR_22 = 0.25f, STAT_INT_22 = 0.75f, STAT_DEX_22 = 0.75f, STAT_WILL_22 = 0.25f, STAT_LUCK_22 = 0.0f;
-    const float STAT_LIFE_23 = 0.25f, STAT_MANA_23 = 0.25f, STAT_STAM_23 = 0.25f, STAT_STR_23 = 0.25f, STAT_INT_23 = 0.5f, STAT_DEX_23 = 0.5f, STAT_WILL_23 = 0.25f, STAT_LUCK_23 = 0.0f;
-    const float STAT_LIFE_24 = 0.0f, STAT_MANA_24 = 0.25f, STAT_STAM_24 = 0.25f, STAT_STR_24 = 0.25f, STAT_INT_24 = 0.25f, STAT_DEX_24 = 0.25f, STAT_WILL_24 = 0.25f, STAT_LUCK_24 = 0.0f;
-    const float STAT_LIFE_25_OVER = 0.0f, STAT_MANA_25_OVER = 0.0f, STAT_STAM_25_OVER = 0.0f, STAT_STR_25_OVER = 0.0f, STAT_INT_25_OVER = 0.0f, STAT_DEX_25_OVER = 0.0f, STAT_WILL_25_OVER = 0.0f, STAT_LUCK_25_OVER = 0.0f;
+
+
+    // const float STAT_LIFE_10 = 1.0f, STAT_MANA_10 = 0.25f, STAT_STAM_10 = 0.5f, STAT_STR_10 = 0.5f, STAT_INT_10 = 0.0f, STAT_DEX_10 = 0.5f, STAT_WILL_10 = 0.75f, STAT_LUCK_10 = 0.75f;
+    // const float STAT_LIFE_11 = 1.0f, STAT_MANA_11 = 0.25f, STAT_STAM_11 = 0.5f, STAT_STR_11 = 0.5f, STAT_INT_11 = 0.0f, STAT_DEX_11 = 0.75f, STAT_WILL_11 = 0.75f, STAT_LUCK_11 = 0.5f;
+    // const float STAT_LIFE_12 = 0.75f, STAT_MANA_12 = 0.25f, STAT_STAM_12 = 0.75f, STAT_STR_12 = 0.5f, STAT_INT_12 = 0.0f, STAT_DEX_12 = 0.75f, STAT_WILL_12 = 0.75f, STAT_LUCK_12 = 0.5f;
+    // const float STAT_LIFE_13 = 0.75f, STAT_MANA_13 = 0.5f, STAT_STAM_13 = 0.75f, STAT_STR_13 = 0.5f, STAT_INT_13 = 0.0f, STAT_DEX_13 = 0.75f, STAT_WILL_13 = 0.75f, STAT_LUCK_13 = 0.25f;
+    // const float STAT_LIFE_14 = 0.75f, STAT_MANA_14 = 0.5f, STAT_STAM_14 = 0.75f, STAT_STR_14 = 0.5f, STAT_INT_14 = 0.25f, STAT_DEX_14 = 0.5f, STAT_WILL_14 = 0.5f, STAT_LUCK_14 = 0.25f;
+    // const float STAT_LIFE_15 = 0.75f, STAT_MANA_15 = 0.5f, STAT_STAM_15 = 0.75f, STAT_STR_15 = 0.5f, STAT_INT_15 = 0.5f, STAT_DEX_15 = 0.25f, STAT_WILL_15 = 0.5f, STAT_LUCK_15 = 0.0f;
+    // const float STAT_LIFE_16 = 0.5f, STAT_MANA_16 = 0.75f, STAT_STAM_16 = 0.75f, STAT_STR_16 = 0.5f, STAT_INT_16 = 0.5f, STAT_DEX_16 = 0.25f, STAT_WILL_16 = 0.5f, STAT_LUCK_16 = 0.0f;
+    // const float STAT_LIFE_17 = 0.5f, STAT_MANA_17 = 0.75f, STAT_STAM_17 = 0.75f, STAT_STR_17 = 0.5f, STAT_INT_17 = 0.75f, STAT_DEX_17 = 0.0f, STAT_WILL_17 = 0.25f, STAT_LUCK_17 = 0.0f;
+    // const float STAT_LIFE_18 = 0.5f, STAT_MANA_18 = 0.75f, STAT_STAM_18 = 0.75f, STAT_STR_18 = 0.5f, STAT_INT_18 = 0.75f, STAT_DEX_18 = 0.0f, STAT_WILL_18 = 0.25f, STAT_LUCK_18 = 0.0f;
+    // const float STAT_LIFE_19 = 0.5f, STAT_MANA_19 = 0.75f, STAT_STAM_19 = 0.75f, STAT_STR_19 = 0.5f, STAT_INT_19 = 0.75f, STAT_DEX_19 = 0.0f, STAT_WILL_19 = 0.25f, STAT_LUCK_19 = 0.0f;
+    // const float STAT_LIFE_20 = 0.25f, STAT_MANA_20 = 0.75f, STAT_STAM_20 = 0.75f, STAT_STR_20 = 0.5f, STAT_INT_20 = 0.75f, STAT_DEX_20 = 0.25f, STAT_WILL_20 = 0.25f, STAT_LUCK_20 = 0.0f;
+    // const float STAT_LIFE_21 = 0.25f, STAT_MANA_21 = 0.5f, STAT_STAM_21 = 0.5f, STAT_STR_21 = 0.5f, STAT_INT_21 = 1.0f, STAT_DEX_21 = 0.5f, STAT_WILL_21 = 0.25f, STAT_LUCK_21 = 0.0f;
+    // const float STAT_LIFE_22 = 0.25f, STAT_MANA_22 = 0.5f, STAT_STAM_22 = 0.25f, STAT_STR_22 = 0.25f, STAT_INT_22 = 0.75f, STAT_DEX_22 = 0.75f, STAT_WILL_22 = 0.25f, STAT_LUCK_22 = 0.0f;
+    // const float STAT_LIFE_23 = 0.25f, STAT_MANA_23 = 0.25f, STAT_STAM_23 = 0.25f, STAT_STR_23 = 0.25f, STAT_INT_23 = 0.5f, STAT_DEX_23 = 0.5f, STAT_WILL_23 = 0.25f, STAT_LUCK_23 = 0.0f;
+    // const float STAT_LIFE_24 = 0.0f, STAT_MANA_24 = 0.25f, STAT_STAM_24 = 0.25f, STAT_STR_24 = 0.25f, STAT_INT_24 = 0.25f, STAT_DEX_24 = 0.25f, STAT_WILL_24 = 0.25f, STAT_LUCK_24 = 0.0f;
+    // const float STAT_LIFE_25_OVER = 0.0f, STAT_MANA_25_OVER = 0.0f, STAT_STAM_25_OVER = 0.0f, STAT_STR_25_OVER = 0.0f, STAT_INT_25_OVER = 0.0f, STAT_DEX_25_OVER = 0.0f, STAT_WILL_25_OVER = 0.0f, STAT_LUCK_25_OVER = 0.0f;
+
+    const float HUMAN_STAT_LIFE_10 = 1.0f, HUMAN_STAT_MANA_10 = 0.25f, HUMAN_STAT_STAM_10 = 0.5f, HUMAN_STAT_STR_10 = 0.5f, HUMAN_STAT_INT_10 = 0.0f, HUMAN_STAT_DEX_10 = 0.5f, HUMAN_STAT_WILL_10 = 0.75f, HUMAN_STAT_LUCK_10 = 0.75f;
+    const float HUMAN_STAT_LIFE_11 = 1.0f, HUMAN_STAT_MANA_11 = 0.25f, HUMAN_STAT_STAM_11 = 0.5f, HUMAN_STAT_STR_11 = 0.5f, HUMAN_STAT_INT_11 = 0.0f, HUMAN_STAT_DEX_11 = 0.75f, HUMAN_STAT_WILL_11 = 0.75f, HUMAN_STAT_LUCK_11 = 0.5f;
+    const float HUMAN_STAT_LIFE_12 = 0.75f, HUMAN_STAT_MANA_12 = 0.25f, HUMAN_STAT_STAM_12 = 0.75f, HUMAN_STAT_STR_12 = 0.5f, HUMAN_STAT_INT_12 = 0.0f, HUMAN_STAT_DEX_12 = 0.75f, HUMAN_STAT_WILL_12 = 0.75f, HUMAN_STAT_LUCK_12 = 0.5f;
+    const float HUMAN_STAT_LIFE_13 = 0.75f, HUMAN_STAT_MANA_13 = 0.5f, HUMAN_STAT_STAM_13 = 0.75f, HUMAN_STAT_STR_13 = 0.5f, HUMAN_STAT_INT_13 = 0.0f, HUMAN_STAT_DEX_13 = 0.75f, HUMAN_STAT_WILL_13 = 0.75f, HUMAN_STAT_LUCK_13 = 0.25f;
+    const float HUMAN_STAT_LIFE_14 = 0.75f, HUMAN_STAT_MANA_14 = 0.5f, HUMAN_STAT_STAM_14 = 0.75f, HUMAN_STAT_STR_14 = 0.5f, HUMAN_STAT_INT_14 = 0.25f, HUMAN_STAT_DEX_14 = 0.5f, HUMAN_STAT_WILL_14 = 0.5f, HUMAN_STAT_LUCK_14 = 0.25f;
+    const float HUMAN_STAT_LIFE_15 = 0.75f, HUMAN_STAT_MANA_15 = 0.5f, HUMAN_STAT_STAM_15 = 0.75f, HUMAN_STAT_STR_15 = 0.5f, HUMAN_STAT_INT_15 = 0.5f, HUMAN_STAT_DEX_15 = 0.25f, HUMAN_STAT_WILL_15 = 0.5f, HUMAN_STAT_LUCK_15 = 0.0f;
+    const float HUMAN_STAT_LIFE_16 = 0.5f, HUMAN_STAT_MANA_16 = 0.75f, HUMAN_STAT_STAM_16 = 0.75f, HUMAN_STAT_STR_16 = 0.5f, HUMAN_STAT_INT_16 = 0.5f, HUMAN_STAT_DEX_16 = 0.25f, HUMAN_STAT_WILL_16 = 0.5f, HUMAN_STAT_LUCK_16 = 0.0f;
+    const float HUMAN_STAT_LIFE_17 = 0.5f, HUMAN_STAT_MANA_17 = 0.75f, HUMAN_STAT_STAM_17 = 0.75f, HUMAN_STAT_STR_17 = 0.5f, HUMAN_STAT_INT_17 = 0.75f, HUMAN_STAT_DEX_17 = 0.0f, HUMAN_STAT_WILL_17 = 0.25f, HUMAN_STAT_LUCK_17 = 0.0f;
+    const float HUMAN_STAT_LIFE_18 = 0.5f, HUMAN_STAT_MANA_18 = 0.75f, HUMAN_STAT_STAM_18 = 0.75f, HUMAN_STAT_STR_18 = 0.5f, HUMAN_STAT_INT_18 = 0.75f, HUMAN_STAT_DEX_18 = 0.0f, HUMAN_STAT_WILL_18 = 0.25f, HUMAN_STAT_LUCK_18 = 0.0f;
+    const float HUMAN_STAT_LIFE_19 = 0.5f, HUMAN_STAT_MANA_19 = 0.75f, HUMAN_STAT_STAM_19 = 0.75f, HUMAN_STAT_STR_19 = 0.5f, HUMAN_STAT_INT_19 = 0.75f, HUMAN_STAT_DEX_19 = 0.0f, HUMAN_STAT_WILL_19 = 0.25f, HUMAN_STAT_LUCK_19 = 0.0f;
+    const float HUMAN_STAT_LIFE_20 = 0.25f, HUMAN_STAT_MANA_20 = 0.75f, HUMAN_STAT_STAM_20 = 0.75f, HUMAN_STAT_STR_20 = 0.5f, HUMAN_STAT_INT_20 = 0.75f, HUMAN_STAT_DEX_20 = 0.25f, HUMAN_STAT_WILL_20 = 0.25f, HUMAN_STAT_LUCK_20 = 0.0f;
+    const float HUMAN_STAT_LIFE_21 = 0.25f, HUMAN_STAT_MANA_21 = 0.5f, HUMAN_STAT_STAM_21 = 0.5f, HUMAN_STAT_STR_21 = 0.5f, HUMAN_STAT_INT_21 = 1.0f, HUMAN_STAT_DEX_21 = 0.5f, HUMAN_STAT_WILL_21 = 0.25f, HUMAN_STAT_LUCK_21 = 0.0f;
+    const float HUMAN_STAT_LIFE_22 = 0.25f, HUMAN_STAT_MANA_22 = 0.5f, HUMAN_STAT_STAM_22 = 0.25f, HUMAN_STAT_STR_22 = 0.25f, HUMAN_STAT_INT_22 = 0.75f, HUMAN_STAT_DEX_22 = 0.75f, HUMAN_STAT_WILL_22 = 0.25f, HUMAN_STAT_LUCK_22 = 0.0f;
+    const float HUMAN_STAT_LIFE_23 = 0.25f, HUMAN_STAT_MANA_23 = 0.25f, HUMAN_STAT_STAM_23 = 0.25f, HUMAN_STAT_STR_23 = 0.25f, HUMAN_STAT_INT_23 = 0.5f, HUMAN_STAT_DEX_23 = 0.5f, HUMAN_STAT_WILL_23 = 0.25f, HUMAN_STAT_LUCK_23 = 0.0f;
+    const float HUMAN_STAT_LIFE_24 = 0.0f, HUMAN_STAT_MANA_24 = 0.25f, HUMAN_STAT_STAM_24 = 0.25f, HUMAN_STAT_STR_24 = 0.25f, HUMAN_STAT_INT_24 = 0.25f, HUMAN_STAT_DEX_24 = 0.25f, HUMAN_STAT_WILL_24 = 0.25f, HUMAN_STAT_LUCK_24 = 0.0f;
+    const float HUMAN_STAT_LIFE_25_OVER = 0.0f, HUMAN_STAT_MANA_25_OVER = 0.0f, HUMAN_STAT_STAM_25_OVER = 0.0f, HUMAN_STAT_STR_25_OVER = 0.0f, HUMAN_STAT_INT_25_OVER = 0.0f, HUMAN_STAT_DEX_25_OVER = 0.0f, HUMAN_STAT_WILL_25_OVER = 0.0f, HUMAN_STAT_LUCK_25_OVER = 0.0f;
+
+
+    const float ELF_STAT_LIFE_10 = 0.5f, ELF_STAT_MANA_10 = 1.0f, ELF_STAT_STAM_10 = 0.5f, ELF_STAT_STR_10 = 0.25f, ELF_STAT_INT_10 = 0.5f, ELF_STAT_DEX_10 = 0.75f, ELF_STAT_WILL_10 = 0.25f, ELF_STAT_LUCK_10 = 0.5f;
+    const float ELF_STAT_LIFE_11 = 0.5f, ELF_STAT_MANA_11 = 1.0f, ELF_STAT_STAM_11 = 0.5f, ELF_STAT_STR_11 = 0.25f, ELF_STAT_INT_11 = 0.5f, ELF_STAT_DEX_11 = 0.75f, ELF_STAT_WILL_11 = 0.25f, ELF_STAT_LUCK_11 = 0.5f;
+    const float ELF_STAT_LIFE_12 = 0.75f, ELF_STAT_MANA_12 = 0.75f, ELF_STAT_STAM_12 = 0.5f, ELF_STAT_STR_12 = 0.25f, ELF_STAT_INT_12 = 0.5f, ELF_STAT_DEX_12 = 0.75f, ELF_STAT_WILL_12 = 0.25f, ELF_STAT_LUCK_12 = 0.25f;
+    const float ELF_STAT_LIFE_13 = 0.75f, ELF_STAT_MANA_13 = 0.75f, ELF_STAT_STAM_13 = 0.5f, ELF_STAT_STR_13 = 0.25f, ELF_STAT_INT_13 = 0.5f, ELF_STAT_DEX_13 = 0.75f, ELF_STAT_WILL_13 = 0.5f, ELF_STAT_LUCK_13 = 0.25f;
+    const float ELF_STAT_LIFE_14 = 0.5f, ELF_STAT_MANA_14 = 0.75f, ELF_STAT_STAM_14 = 0.75f, ELF_STAT_STR_14 = 0.25f, ELF_STAT_INT_14 = 0.75f, ELF_STAT_DEX_14 = 0.5f, ELF_STAT_WILL_14 = 0.5f, ELF_STAT_LUCK_14 = 0.25f;
+    const float ELF_STAT_LIFE_15 = 0.5f, ELF_STAT_MANA_15 = 0.5f, ELF_STAT_STAM_15 = 0.75f, ELF_STAT_STR_15 = 0.25f, ELF_STAT_INT_15 = 0.75f, ELF_STAT_DEX_15 = 0.5f, ELF_STAT_WILL_15 = 0.5f, ELF_STAT_LUCK_15 = 0.0f;
+    const float ELF_STAT_LIFE_16 = 0.5f, ELF_STAT_MANA_16 = 0.5f, ELF_STAT_STAM_16 = 0.75f, ELF_STAT_STR_16 = 0.25f, ELF_STAT_INT_16 = 0.75f, ELF_STAT_DEX_16 = 0.5f, ELF_STAT_WILL_16 = 0.25f, ELF_STAT_LUCK_16 = 0.0f;
+    const float ELF_STAT_LIFE_17 = 0.5f, ELF_STAT_MANA_17 = 0.5f, ELF_STAT_STAM_17 = 0.5f, ELF_STAT_STR_17 = 0.25f, ELF_STAT_INT_17 = 0.5f, ELF_STAT_DEX_17 = 0.5f, ELF_STAT_WILL_17 = 0.5f, ELF_STAT_LUCK_17 = 0.0f;
+    const float ELF_STAT_LIFE_18 = 0.5f, ELF_STAT_MANA_18 = 0.5f, ELF_STAT_STAM_18 = 0.5f, ELF_STAT_STR_18 = 0.5f, ELF_STAT_INT_18 = 0.5f, ELF_STAT_DEX_18 = 0.5f, ELF_STAT_WILL_18 = 0.5f, ELF_STAT_LUCK_18 = 0.0f;
+    const float ELF_STAT_LIFE_19 = 0.5f, ELF_STAT_MANA_19 = 0.5f, ELF_STAT_STAM_19 = 0.5f, ELF_STAT_STR_19 = 0.5f, ELF_STAT_INT_19 = 0.5f, ELF_STAT_DEX_19 = 0.25f, ELF_STAT_WILL_19 = 0.25f, ELF_STAT_LUCK_19 = 0.0f;
+    const float ELF_STAT_LIFE_20 = 0.5f, ELF_STAT_MANA_20 = 0.5f, ELF_STAT_STAM_20 = 0.5f, ELF_STAT_STR_20 = 0.5f, ELF_STAT_INT_20 = 0.5f, ELF_STAT_DEX_20 = 0.25f, ELF_STAT_WILL_20 = 0.25f, ELF_STAT_LUCK_20 = 0.0f;
+    const float ELF_STAT_LIFE_21 = 0.25f, ELF_STAT_MANA_21 = 0.5f, ELF_STAT_STAM_21 = 0.25f, ELF_STAT_STR_21 = 0.5f, ELF_STAT_INT_21 = 0.5f, ELF_STAT_DEX_21 = 0.25f, ELF_STAT_WILL_21 = 0.5f, ELF_STAT_LUCK_21 = 0.0f;
+    const float ELF_STAT_LIFE_22 = 0.25f, ELF_STAT_MANA_22 = 0.5f, ELF_STAT_STAM_22 = 0.25f, ELF_STAT_STR_22 = 0.5f, ELF_STAT_INT_22 = 0.5f, ELF_STAT_DEX_22 = 0.25f, ELF_STAT_WILL_22 = 0.25f, ELF_STAT_LUCK_22 = 0.0f;
+    const float ELF_STAT_LIFE_23 = 0.25f, ELF_STAT_MANA_23 = 0.25f, ELF_STAT_STAM_23 = 0.25f, ELF_STAT_STR_23 = 0.25f, ELF_STAT_INT_23 = 0.5f, ELF_STAT_DEX_23 = 0.25f, ELF_STAT_WILL_23 = 0.25f, ELF_STAT_LUCK_23 = 0.0f;
+    const float ELF_STAT_LIFE_24 = 0.25f, ELF_STAT_MANA_24 = 0.25f, ELF_STAT_STAM_24 = 0.0f, ELF_STAT_STR_24 = 0.25f, ELF_STAT_INT_24 = 0.25f, ELF_STAT_DEX_24 = 0.25f, ELF_STAT_WILL_24 = 0.25f, ELF_STAT_LUCK_24 = 0.0f;
+    const float ELF_STAT_LIFE_25_OVER = 0.0f, ELF_STAT_MANA_25_OVER = 0.0f, ELF_STAT_STAM_25_OVER = 0.0f, ELF_STAT_STR_25_OVER = 0.0f, ELF_STAT_INT_25_OVER = 0.0f, ELF_STAT_DEX_25_OVER = 0.0f, ELF_STAT_WILL_25_OVER = 0.0f, ELF_STAT_LUCK_25_OVER = 0.0f;
+
+
+    const float GIANT_STAT_LIFE_10 = 1.0f, GIANT_STAT_MANA_10 = 0.25f, GIANT_STAT_STAM_10 = 0.75f, GIANT_STAT_STR_10 = 0.75f, GIANT_STAT_INT_10 = 0.0f, GIANT_STAT_DEX_10 = 0.5f, GIANT_STAT_WILL_10 = 0.5f, GIANT_STAT_LUCK_10 = 0.5f;
+    const float GIANT_STAT_LIFE_11 = 1.0f, GIANT_STAT_MANA_11 = 0.25f, GIANT_STAT_STAM_11 = 0.75f, GIANT_STAT_STR_11 = 0.75f, GIANT_STAT_INT_11 = 0.0f, GIANT_STAT_DEX_11 = 0.5f, GIANT_STAT_WILL_11 = 0.75f, GIANT_STAT_LUCK_11 = 0.5f;
+    const float GIANT_STAT_LIFE_12 = 1.0f, GIANT_STAT_MANA_12 = 0.5f, GIANT_STAT_STAM_12 = 0.5f, GIANT_STAT_STR_12 = 0.75f, GIANT_STAT_INT_12 = 0.0f, GIANT_STAT_DEX_12 = 0.5f, GIANT_STAT_WILL_12 = 0.75f, GIANT_STAT_LUCK_12 = 0.25f;
+    const float GIANT_STAT_LIFE_13 = 1.0f, GIANT_STAT_MANA_13 = 0.5f, GIANT_STAT_STAM_13 = 0.5f, GIANT_STAT_STR_13 = 0.75f, GIANT_STAT_INT_13 = 0.0f, GIANT_STAT_DEX_13 = 0.25f, GIANT_STAT_WILL_13 = 0.75f, GIANT_STAT_LUCK_13 = 0.25f;
+    const float GIANT_STAT_LIFE_14 = 0.75f, GIANT_STAT_MANA_14 = 0.75f, GIANT_STAT_STAM_14 = 0.5f, GIANT_STAT_STR_14 = 0.75f, GIANT_STAT_INT_14 = 0.0f, GIANT_STAT_DEX_14 = 0.25f, GIANT_STAT_WILL_14 = 0.75f, GIANT_STAT_LUCK_14 = 0.25f;
+    const float GIANT_STAT_LIFE_15 = 0.75f, GIANT_STAT_MANA_15 = 0.5f, GIANT_STAT_STAM_15 = 0.25f, GIANT_STAT_STR_15 = 0.5f, GIANT_STAT_INT_15 = 0.0f, GIANT_STAT_DEX_15 = 0.5f, GIANT_STAT_WILL_15 = 1.0f, GIANT_STAT_LUCK_15 = 0.0f;
+    const float GIANT_STAT_LIFE_16 = 0.75f, GIANT_STAT_MANA_16 = 0.5f, GIANT_STAT_STAM_16 = 0.25f, GIANT_STAT_STR_16 = 0.5f, GIANT_STAT_INT_16 = 0.25f, GIANT_STAT_DEX_16 = 0.5f, GIANT_STAT_WILL_16 = 0.75f, GIANT_STAT_LUCK_16 = 0.0f;
+    const float GIANT_STAT_LIFE_17 = 0.5f, GIANT_STAT_MANA_17 = 0.25f, GIANT_STAT_STAM_17 = 0.5f, GIANT_STAT_STR_17 = 0.5f, GIANT_STAT_INT_17 = 0.25f, GIANT_STAT_DEX_17 = 0.5f, GIANT_STAT_WILL_17 = 0.5f, GIANT_STAT_LUCK_17 = 0.0f;
+    const float GIANT_STAT_LIFE_18 = 0.5f, GIANT_STAT_MANA_18 = 0.25f, GIANT_STAT_STAM_18 = 0.5f, GIANT_STAT_STR_18 = 0.5f, GIANT_STAT_INT_18 = 0.25f, GIANT_STAT_DEX_18 = 0.5f, GIANT_STAT_WILL_18 = 0.25f, GIANT_STAT_LUCK_18 = 0.0f;
+    const float GIANT_STAT_LIFE_19 = 0.5f, GIANT_STAT_MANA_19 = 0.25f, GIANT_STAT_STAM_19 = 0.75f, GIANT_STAT_STR_19 = 0.25f, GIANT_STAT_INT_19 = 0.5f, GIANT_STAT_DEX_19 = 0.5f, GIANT_STAT_WILL_19 = 0.5f, GIANT_STAT_LUCK_19 = 0.0f;
+    const float GIANT_STAT_LIFE_20 = 0.5f, GIANT_STAT_MANA_20 = 0.25f, GIANT_STAT_STAM_20 = 0.75f, GIANT_STAT_STR_20 = 0.25f, GIANT_STAT_INT_20 = 0.75f, GIANT_STAT_DEX_20 = 0.25f, GIANT_STAT_WILL_20 = 0.5f, GIANT_STAT_LUCK_20 = 0.0f;
+    const float GIANT_STAT_LIFE_21 = 0.5f, GIANT_STAT_MANA_21 = 0.25f, GIANT_STAT_STAM_21 = 0.75f, GIANT_STAT_STR_21 = 0.25f, GIANT_STAT_INT_21 = 0.75f, GIANT_STAT_DEX_21 = 0.25f, GIANT_STAT_WILL_21 = 0.5f, GIANT_STAT_LUCK_21 = 0.0f;
+    const float GIANT_STAT_LIFE_22 = 0.5f, GIANT_STAT_MANA_22 = 0.25f, GIANT_STAT_STAM_22 = 0.5f, GIANT_STAT_STR_22 = 0.25f, GIANT_STAT_INT_22 = 0.5f, GIANT_STAT_DEX_22 = 0.25f, GIANT_STAT_WILL_22 = 0.5f, GIANT_STAT_LUCK_22 = 0.0f;
+    const float GIANT_STAT_LIFE_23 = 0.25f, GIANT_STAT_MANA_23 = 0.25f, GIANT_STAT_STAM_23 = 0.25f, GIANT_STAT_STR_23 = 0.25f, GIANT_STAT_INT_23 = 0.25f, GIANT_STAT_DEX_23 = 0.25f, GIANT_STAT_WILL_23 = 0.5f, GIANT_STAT_LUCK_23 = 0.0f;
+    const float GIANT_STAT_LIFE_24 = 0.25f, GIANT_STAT_MANA_24 = 0.0f, GIANT_STAT_STAM_24 = 0.25f, GIANT_STAT_STR_24 = 0.25f, GIANT_STAT_INT_24 = 0.25f, GIANT_STAT_DEX_24 = 0.25f, GIANT_STAT_WILL_24 = 0.25f, GIANT_STAT_LUCK_24 = 0.0f;
+    const float GIANT_STAT_LIFE_25_OVER = 0.0f, GIANT_STAT_MANA_25_OVER = 0.0f, GIANT_STAT_STAM_25_OVER = 0.0f, GIANT_STAT_STR_25_OVER = 0.0f, GIANT_STAT_INT_25_OVER = 0.0f, GIANT_STAT_DEX_25_OVER = 0.0f, GIANT_STAT_WILL_25_OVER = 0.0f, GIANT_STAT_LUCK_25_OVER = 0.0f;
 
     // 재능 별 레벨업 시 얻는 스탯
     // 재능에 따라 레벨 업 할 때마다 아래의 스탯을 추가로 얻습니다.
@@ -575,63 +634,186 @@ void MainWindow::InitializeStats() {
         STAT_WILL_Talent_Bonus_MagiGraphy = 0.0f,
         STAT_LUCK_Talent_Bonus_MagiGraphy = 0.0f;
 
-
-    for(int i = AGE::AGE_10; i < AGE::AGE_25이상 + 1 ; i++) {
-        Stats initStats;
-        switch(i) {
-        case AGE::AGE_10:
-            initStats = {STAT_LIFE_10, STAT_MANA_10, STAT_STAM_10, STAT_STR_10, STAT_INT_10, STAT_DEX_10, STAT_WILL_10, STAT_LUCK_10};
-            break;
-        case AGE::AGE_11:
-            initStats = {STAT_LIFE_11, STAT_MANA_11, STAT_STAM_11, STAT_STR_11, STAT_INT_11, STAT_DEX_11, STAT_WILL_11, STAT_LUCK_11};
-            break;
-        case AGE::AGE_12:
-            initStats = {STAT_LIFE_12, STAT_MANA_12, STAT_STAM_12, STAT_STR_12, STAT_INT_12, STAT_DEX_12, STAT_WILL_12, STAT_LUCK_12};
-            break;
-        case AGE::AGE_13:
-            initStats = {STAT_LIFE_13, STAT_MANA_13, STAT_STAM_13, STAT_STR_13, STAT_INT_13, STAT_DEX_13, STAT_WILL_13, STAT_LUCK_13};
-            break;
-        case AGE::AGE_14:
-            initStats = {STAT_LIFE_14, STAT_MANA_14, STAT_STAM_14, STAT_STR_14, STAT_INT_14, STAT_DEX_14, STAT_WILL_14, STAT_LUCK_14};
-            break;
-        case AGE::AGE_15:
-            initStats = {STAT_LIFE_15, STAT_MANA_15, STAT_STAM_15, STAT_STR_15, STAT_INT_15, STAT_DEX_15, STAT_WILL_15, STAT_LUCK_15};
-            break;
-        case AGE::AGE_16:
-            initStats = {STAT_LIFE_16, STAT_MANA_16, STAT_STAM_16, STAT_STR_16, STAT_INT_16, STAT_DEX_16, STAT_WILL_16, STAT_LUCK_16};
-            break;
-        case AGE::AGE_17:
-            initStats = {STAT_LIFE_17, STAT_MANA_17, STAT_STAM_17, STAT_STR_17, STAT_INT_17, STAT_DEX_17, STAT_WILL_17, STAT_LUCK_17};
-            break;
-        case AGE::AGE_18:
-            initStats = {STAT_LIFE_18, STAT_MANA_18, STAT_STAM_18, STAT_STR_18, STAT_INT_18, STAT_DEX_18, STAT_WILL_18, STAT_LUCK_18};
-            break;
-        case AGE::AGE_19:
-            initStats = {STAT_LIFE_19, STAT_MANA_19, STAT_STAM_19, STAT_STR_19, STAT_INT_19, STAT_DEX_19, STAT_WILL_19, STAT_LUCK_19};
-            break;
-        case AGE::AGE_20:
-            initStats = {STAT_LIFE_20, STAT_MANA_20, STAT_STAM_20, STAT_STR_20, STAT_INT_20, STAT_DEX_20, STAT_WILL_20, STAT_LUCK_20};
-            break;
-        case AGE::AGE_21:
-            initStats = {STAT_LIFE_21, STAT_MANA_21, STAT_STAM_21, STAT_STR_21, STAT_INT_21, STAT_DEX_21, STAT_WILL_21, STAT_LUCK_21};
-            break;
-        case AGE::AGE_22:
-            initStats = {STAT_LIFE_22, STAT_MANA_22, STAT_STAM_22, STAT_STR_22, STAT_INT_22, STAT_DEX_22, STAT_WILL_22, STAT_LUCK_22};
-            break;
-        case AGE::AGE_23:
-            initStats = {STAT_LIFE_23, STAT_MANA_23, STAT_STAM_23, STAT_STR_23, STAT_INT_23, STAT_DEX_23, STAT_WILL_23, STAT_LUCK_23};
-            break;
-        case AGE::AGE_24:
-            initStats = {STAT_LIFE_24, STAT_MANA_24, STAT_STAM_24, STAT_STR_24, STAT_INT_24, STAT_DEX_24, STAT_WILL_24, STAT_LUCK_24};
-            break;
-        case AGE::AGE_25이상:
-            initStats = {STAT_LIFE_25_OVER, STAT_MANA_25_OVER, STAT_STAM_25_OVER, STAT_STR_25_OVER, STAT_INT_25_OVER, STAT_DEX_25_OVER, STAT_WILL_25_OVER, STAT_LUCK_25_OVER};
-            break;
+    for(int j = RACES::RACES_HUMAN; j < RACES::RACES_GIANT + 1; j++) {
+        switch(j) {
+        case RACES::RACES_HUMAN:
+            for(int i = AGE::AGE_10; i < AGE::AGE_25이상 + 1 ; i++) {
+                Stats initStats;
+                switch(i) {
+                case AGE::AGE_10:
+                    initStats = {HUMAN_STAT_LIFE_10, HUMAN_STAT_MANA_10, HUMAN_STAT_STAM_10, HUMAN_STAT_STR_10, HUMAN_STAT_INT_10, HUMAN_STAT_DEX_10, HUMAN_STAT_WILL_10, HUMAN_STAT_LUCK_10};
+                    break;
+                case AGE::AGE_11:
+                    initStats = {HUMAN_STAT_LIFE_11, HUMAN_STAT_MANA_11, HUMAN_STAT_STAM_11, HUMAN_STAT_STR_11, HUMAN_STAT_INT_11, HUMAN_STAT_DEX_11, HUMAN_STAT_WILL_11, HUMAN_STAT_LUCK_11};
+                    break;
+                case AGE::AGE_12:
+                    initStats = {HUMAN_STAT_LIFE_12, HUMAN_STAT_MANA_12, HUMAN_STAT_STAM_12, HUMAN_STAT_STR_12, HUMAN_STAT_INT_12, HUMAN_STAT_DEX_12, HUMAN_STAT_WILL_12, HUMAN_STAT_LUCK_12};
+                    break;
+                case AGE::AGE_13:
+                    initStats = {HUMAN_STAT_LIFE_13, HUMAN_STAT_MANA_13, HUMAN_STAT_STAM_13, HUMAN_STAT_STR_13, HUMAN_STAT_INT_13, HUMAN_STAT_DEX_13, HUMAN_STAT_WILL_13, HUMAN_STAT_LUCK_13};
+                    break;
+                case AGE::AGE_14:
+                    initStats = {HUMAN_STAT_LIFE_14, HUMAN_STAT_MANA_14, HUMAN_STAT_STAM_14, HUMAN_STAT_STR_14, HUMAN_STAT_INT_14, HUMAN_STAT_DEX_14, HUMAN_STAT_WILL_14, HUMAN_STAT_LUCK_14};
+                    break;
+                case AGE::AGE_15:
+                    initStats = {HUMAN_STAT_LIFE_15, HUMAN_STAT_MANA_15, HUMAN_STAT_STAM_15, HUMAN_STAT_STR_15, HUMAN_STAT_INT_15, HUMAN_STAT_DEX_15, HUMAN_STAT_WILL_15, HUMAN_STAT_LUCK_15};
+                    break;
+                case AGE::AGE_16:
+                    initStats = {HUMAN_STAT_LIFE_16, HUMAN_STAT_MANA_16, HUMAN_STAT_STAM_16, HUMAN_STAT_STR_16, HUMAN_STAT_INT_16, HUMAN_STAT_DEX_16, HUMAN_STAT_WILL_16, HUMAN_STAT_LUCK_16};
+                    break;
+                case AGE::AGE_17:
+                    initStats = {HUMAN_STAT_LIFE_17, HUMAN_STAT_MANA_17, HUMAN_STAT_STAM_17, HUMAN_STAT_STR_17, HUMAN_STAT_INT_17, HUMAN_STAT_DEX_17, HUMAN_STAT_WILL_17, HUMAN_STAT_LUCK_17};
+                    break;
+                case AGE::AGE_18:
+                    initStats = {HUMAN_STAT_LIFE_18, HUMAN_STAT_MANA_18, HUMAN_STAT_STAM_18, HUMAN_STAT_STR_18, HUMAN_STAT_INT_18, HUMAN_STAT_DEX_18, HUMAN_STAT_WILL_18, HUMAN_STAT_LUCK_18};
+                    break;
+                case AGE::AGE_19:
+                    initStats = {HUMAN_STAT_LIFE_19, HUMAN_STAT_MANA_19, HUMAN_STAT_STAM_19, HUMAN_STAT_STR_19, HUMAN_STAT_INT_19, HUMAN_STAT_DEX_19, HUMAN_STAT_WILL_19, HUMAN_STAT_LUCK_19};
+                    break;
+                case AGE::AGE_20:
+                    initStats = {HUMAN_STAT_LIFE_20, HUMAN_STAT_MANA_20, HUMAN_STAT_STAM_20, HUMAN_STAT_STR_20, HUMAN_STAT_INT_20, HUMAN_STAT_DEX_20, HUMAN_STAT_WILL_20, HUMAN_STAT_LUCK_20};
+                    break;
+                case AGE::AGE_21:
+                    initStats = {HUMAN_STAT_LIFE_21, HUMAN_STAT_MANA_21, HUMAN_STAT_STAM_21, HUMAN_STAT_STR_21, HUMAN_STAT_INT_21, HUMAN_STAT_DEX_21, HUMAN_STAT_WILL_21, HUMAN_STAT_LUCK_21};
+                    break;
+                case AGE::AGE_22:
+                    initStats = {HUMAN_STAT_LIFE_22, HUMAN_STAT_MANA_22, HUMAN_STAT_STAM_22, HUMAN_STAT_STR_22, HUMAN_STAT_INT_22, HUMAN_STAT_DEX_22, HUMAN_STAT_WILL_22, HUMAN_STAT_LUCK_22};
+                    break;
+                case AGE::AGE_23:
+                    initStats = {HUMAN_STAT_LIFE_23, HUMAN_STAT_MANA_23, HUMAN_STAT_STAM_23, HUMAN_STAT_STR_23, HUMAN_STAT_INT_23, HUMAN_STAT_DEX_23, HUMAN_STAT_WILL_23, HUMAN_STAT_LUCK_23};
+                    break;
+                case AGE::AGE_24:
+                    initStats = {HUMAN_STAT_LIFE_24, HUMAN_STAT_MANA_24, HUMAN_STAT_STAM_24, HUMAN_STAT_STR_24, HUMAN_STAT_INT_24, HUMAN_STAT_DEX_24, HUMAN_STAT_WILL_24, HUMAN_STAT_LUCK_24};
+                    break;
+                case AGE::AGE_25이상:
+                    initStats = {HUMAN_STAT_LIFE_25_OVER, HUMAN_STAT_MANA_25_OVER, HUMAN_STAT_STAM_25_OVER, HUMAN_STAT_STR_25_OVER, HUMAN_STAT_INT_25_OVER, HUMAN_STAT_DEX_25_OVER, HUMAN_STAT_WILL_25_OVER, HUMAN_STAT_LUCK_25_OVER};
+                    break;
+                default:
+                    break;
+                }
+                vecStatAge.push_back(initStats);
+            }
+        case RACES::RACES_ELF:
+            for(int i = AGE::AGE_10; i < AGE::AGE_25이상 + 1 ; i++) {
+                Stats initStats;
+                switch(i) {
+                case AGE::AGE_10:
+                    initStats = {ELF_STAT_LIFE_10, ELF_STAT_MANA_10, ELF_STAT_STAM_10, ELF_STAT_STR_10, ELF_STAT_INT_10, ELF_STAT_DEX_10, ELF_STAT_WILL_10, ELF_STAT_LUCK_10};
+                    break;
+                case AGE::AGE_11:
+                    initStats = {ELF_STAT_LIFE_11, ELF_STAT_MANA_11, ELF_STAT_STAM_11, ELF_STAT_STR_11, ELF_STAT_INT_11, ELF_STAT_DEX_11, ELF_STAT_WILL_11, ELF_STAT_LUCK_11};
+                    break;
+                case AGE::AGE_12:
+                    initStats = {ELF_STAT_LIFE_12, ELF_STAT_MANA_12, ELF_STAT_STAM_12, ELF_STAT_STR_12, ELF_STAT_INT_12, ELF_STAT_DEX_12, ELF_STAT_WILL_12, ELF_STAT_LUCK_12};
+                    break;
+                case AGE::AGE_13:
+                    initStats = {ELF_STAT_LIFE_13, ELF_STAT_MANA_13, ELF_STAT_STAM_13, ELF_STAT_STR_13, ELF_STAT_INT_13, ELF_STAT_DEX_13, ELF_STAT_WILL_13, ELF_STAT_LUCK_13};
+                    break;
+                case AGE::AGE_14:
+                    initStats = {ELF_STAT_LIFE_14, ELF_STAT_MANA_14, ELF_STAT_STAM_14, ELF_STAT_STR_14, ELF_STAT_INT_14, ELF_STAT_DEX_14, ELF_STAT_WILL_14, ELF_STAT_LUCK_14};
+                    break;
+                case AGE::AGE_15:
+                    initStats = {ELF_STAT_LIFE_15, ELF_STAT_MANA_15, ELF_STAT_STAM_15, ELF_STAT_STR_15, ELF_STAT_INT_15, ELF_STAT_DEX_15, ELF_STAT_WILL_15, ELF_STAT_LUCK_15};
+                    break;
+                case AGE::AGE_16:
+                    initStats = {ELF_STAT_LIFE_16, ELF_STAT_MANA_16, ELF_STAT_STAM_16, ELF_STAT_STR_16, ELF_STAT_INT_16, ELF_STAT_DEX_16, ELF_STAT_WILL_16, ELF_STAT_LUCK_16};
+                    break;
+                case AGE::AGE_17:
+                    initStats = {ELF_STAT_LIFE_17, ELF_STAT_MANA_17, ELF_STAT_STAM_17, ELF_STAT_STR_17, ELF_STAT_INT_17, ELF_STAT_DEX_17, ELF_STAT_WILL_17, ELF_STAT_LUCK_17};
+                    break;
+                case AGE::AGE_18:
+                    initStats = {ELF_STAT_LIFE_18, ELF_STAT_MANA_18, ELF_STAT_STAM_18, ELF_STAT_STR_18, ELF_STAT_INT_18, ELF_STAT_DEX_18, ELF_STAT_WILL_18, ELF_STAT_LUCK_18};
+                    break;
+                case AGE::AGE_19:
+                    initStats = {ELF_STAT_LIFE_19, ELF_STAT_MANA_19, ELF_STAT_STAM_19, ELF_STAT_STR_19, ELF_STAT_INT_19, ELF_STAT_DEX_19, ELF_STAT_WILL_19, ELF_STAT_LUCK_19};
+                    break;
+                case AGE::AGE_20:
+                    initStats = {ELF_STAT_LIFE_20, ELF_STAT_MANA_20, ELF_STAT_STAM_20, ELF_STAT_STR_20, ELF_STAT_INT_20, ELF_STAT_DEX_20, ELF_STAT_WILL_20, ELF_STAT_LUCK_20};
+                    break;
+                case AGE::AGE_21:
+                    initStats = {ELF_STAT_LIFE_21, ELF_STAT_MANA_21, ELF_STAT_STAM_21, ELF_STAT_STR_21, ELF_STAT_INT_21, ELF_STAT_DEX_21, ELF_STAT_WILL_21, ELF_STAT_LUCK_21};
+                    break;
+                case AGE::AGE_22:
+                    initStats = {ELF_STAT_LIFE_22, ELF_STAT_MANA_22, ELF_STAT_STAM_22, ELF_STAT_STR_22, ELF_STAT_INT_22, ELF_STAT_DEX_22, ELF_STAT_WILL_22, ELF_STAT_LUCK_22};
+                    break;
+                case AGE::AGE_23:
+                    initStats = {ELF_STAT_LIFE_23, ELF_STAT_MANA_23, ELF_STAT_STAM_23, ELF_STAT_STR_23, ELF_STAT_INT_23, ELF_STAT_DEX_23, ELF_STAT_WILL_23, ELF_STAT_LUCK_23};
+                    break;
+                case AGE::AGE_24:
+                    initStats = {ELF_STAT_LIFE_24, ELF_STAT_MANA_24, ELF_STAT_STAM_24, ELF_STAT_STR_24, ELF_STAT_INT_24, ELF_STAT_DEX_24, ELF_STAT_WILL_24, ELF_STAT_LUCK_24};
+                    break;
+                case AGE::AGE_25이상:
+                    initStats = {ELF_STAT_LIFE_25_OVER, ELF_STAT_MANA_25_OVER, ELF_STAT_STAM_25_OVER, ELF_STAT_STR_25_OVER, ELF_STAT_INT_25_OVER, ELF_STAT_DEX_25_OVER, ELF_STAT_WILL_25_OVER, ELF_STAT_LUCK_25_OVER};
+                    break;
+                default:
+                    break;
+                }
+                vecStatAge.push_back(initStats);
+            }
+        case RACES::RACES_GIANT:
+            for(int i = AGE::AGE_10; i < AGE::AGE_25이상 + 1 ; i++) {
+                Stats initStats;
+                switch(i) {
+                case AGE::AGE_10:
+                    initStats = {GIANT_STAT_LIFE_10, GIANT_STAT_MANA_10, GIANT_STAT_STAM_10, GIANT_STAT_STR_10, GIANT_STAT_INT_10, GIANT_STAT_DEX_10, GIANT_STAT_WILL_10, GIANT_STAT_LUCK_10};
+                    break;
+                case AGE::AGE_11:
+                    initStats = {GIANT_STAT_LIFE_11, GIANT_STAT_MANA_11, GIANT_STAT_STAM_11, GIANT_STAT_STR_11, GIANT_STAT_INT_11, GIANT_STAT_DEX_11, GIANT_STAT_WILL_11, GIANT_STAT_LUCK_11};
+                    break;
+                case AGE::AGE_12:
+                    initStats = {GIANT_STAT_LIFE_12, GIANT_STAT_MANA_12, GIANT_STAT_STAM_12, GIANT_STAT_STR_12, GIANT_STAT_INT_12, GIANT_STAT_DEX_12, GIANT_STAT_WILL_12, GIANT_STAT_LUCK_12};
+                    break;
+                case AGE::AGE_13:
+                    initStats = {GIANT_STAT_LIFE_13, GIANT_STAT_MANA_13, GIANT_STAT_STAM_13, GIANT_STAT_STR_13, GIANT_STAT_INT_13, GIANT_STAT_DEX_13, GIANT_STAT_WILL_13, GIANT_STAT_LUCK_13};
+                    break;
+                case AGE::AGE_14:
+                    initStats = {GIANT_STAT_LIFE_14, GIANT_STAT_MANA_14, GIANT_STAT_STAM_14, GIANT_STAT_STR_14, GIANT_STAT_INT_14, GIANT_STAT_DEX_14, GIANT_STAT_WILL_14, GIANT_STAT_LUCK_14};
+                    break;
+                case AGE::AGE_15:
+                    initStats = {GIANT_STAT_LIFE_15, GIANT_STAT_MANA_15, GIANT_STAT_STAM_15, GIANT_STAT_STR_15, GIANT_STAT_INT_15, GIANT_STAT_DEX_15, GIANT_STAT_WILL_15, GIANT_STAT_LUCK_15};
+                    break;
+                case AGE::AGE_16:
+                    initStats = {GIANT_STAT_LIFE_16, GIANT_STAT_MANA_16, GIANT_STAT_STAM_16, GIANT_STAT_STR_16, GIANT_STAT_INT_16, GIANT_STAT_DEX_16, GIANT_STAT_WILL_16, GIANT_STAT_LUCK_16};
+                    break;
+                case AGE::AGE_17:
+                    initStats = {GIANT_STAT_LIFE_17, GIANT_STAT_MANA_17, GIANT_STAT_STAM_17, GIANT_STAT_STR_17, GIANT_STAT_INT_17, GIANT_STAT_DEX_17, GIANT_STAT_WILL_17, GIANT_STAT_LUCK_17};
+                    break;
+                case AGE::AGE_18:
+                    initStats = {GIANT_STAT_LIFE_18, GIANT_STAT_MANA_18, GIANT_STAT_STAM_18, GIANT_STAT_STR_18, GIANT_STAT_INT_18, GIANT_STAT_DEX_18, GIANT_STAT_WILL_18, GIANT_STAT_LUCK_18};
+                    break;
+                case AGE::AGE_19:
+                    initStats = {GIANT_STAT_LIFE_19, GIANT_STAT_MANA_19, GIANT_STAT_STAM_19, GIANT_STAT_STR_19, GIANT_STAT_INT_19, GIANT_STAT_DEX_19, GIANT_STAT_WILL_19, GIANT_STAT_LUCK_19};
+                    break;
+                case AGE::AGE_20:
+                    initStats = {GIANT_STAT_LIFE_20, GIANT_STAT_MANA_20, GIANT_STAT_STAM_20, GIANT_STAT_STR_20, GIANT_STAT_INT_20, GIANT_STAT_DEX_20, GIANT_STAT_WILL_20, GIANT_STAT_LUCK_20};
+                    break;
+                case AGE::AGE_21:
+                    initStats = {GIANT_STAT_LIFE_21, GIANT_STAT_MANA_21, GIANT_STAT_STAM_21, GIANT_STAT_STR_21, GIANT_STAT_INT_21, GIANT_STAT_DEX_21, GIANT_STAT_WILL_21, GIANT_STAT_LUCK_21};
+                    break;
+                case AGE::AGE_22:
+                    initStats = {GIANT_STAT_LIFE_22, GIANT_STAT_MANA_22, GIANT_STAT_STAM_22, GIANT_STAT_STR_22, GIANT_STAT_INT_22, GIANT_STAT_DEX_22, GIANT_STAT_WILL_22, GIANT_STAT_LUCK_22};
+                    break;
+                case AGE::AGE_23:
+                    initStats = {GIANT_STAT_LIFE_23, GIANT_STAT_MANA_23, GIANT_STAT_STAM_23, GIANT_STAT_STR_23, GIANT_STAT_INT_23, GIANT_STAT_DEX_23, GIANT_STAT_WILL_23, GIANT_STAT_LUCK_23};
+                    break;
+                case AGE::AGE_24:
+                    initStats = {GIANT_STAT_LIFE_24, GIANT_STAT_MANA_24, GIANT_STAT_STAM_24, GIANT_STAT_STR_24, GIANT_STAT_INT_24, GIANT_STAT_DEX_24, GIANT_STAT_WILL_24, GIANT_STAT_LUCK_24};
+                    break;
+                case AGE::AGE_25이상:
+                    initStats = {GIANT_STAT_LIFE_25_OVER, GIANT_STAT_MANA_25_OVER, GIANT_STAT_STAM_25_OVER, GIANT_STAT_STR_25_OVER, GIANT_STAT_INT_25_OVER, GIANT_STAT_DEX_25_OVER, GIANT_STAT_WILL_25_OVER, GIANT_STAT_LUCK_25_OVER};
+                    break;
+                default:
+                    break;
+                }
+                vecStatAge.push_back(initStats);
+            }
         default:
             break;
         }
-        vecStatAge.push_back(initStats);
     }
+
+
+
 
     for(int i = TALENT::Talent_Combat; i < TALENT::Talent_TreasureHunter + 1 ; i++) {
         Stats initStats;
